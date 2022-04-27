@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_04_27_091127) do
   create_table "dreams", force: :cascade do |t|
     t.string "dream"
     t.string "category"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.date "due"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -46,10 +46,15 @@ ActiveRecord::Schema.define(version: 2022_04_27_091127) do
   create_table "memories", force: :cascade do |t|
     t.string "title"
     t.string "desc"
+    t.string "img_one"
+    t.string "img_two"
+    t.string "img_three"
     t.integer "rating"
     t.bigint "user_id", null: false
+    t.bigint "dream_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dream_id"], name: "index_memories_on_dream_id"
     t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
@@ -68,5 +73,6 @@ ActiveRecord::Schema.define(version: 2022_04_27_091127) do
   add_foreign_key "details", "dreams"
   add_foreign_key "dreams", "lists"
   add_foreign_key "lists", "users"
+  add_foreign_key "memories", "dreams"
   add_foreign_key "memories", "users"
 end

@@ -134,20 +134,32 @@ puts "🌱 Seeding Memories..."
 Memory.create(
     title: 'Test 1',
     desc: 'Test 1',
+    img_one: 'Test Img 1',
+    img_two: 'Test Img 2',
+    img_three: 'Test Img 3',
     rating: rand(1..5),
-    user_id: User.ids.sample
+    user_id: User.ids.sample,
+    dream_id: Dream.ids.sample
 )
 
 Memory.create(
     title: 'Test 2',
     desc: 'Test 2',
+    img_one: 'Test Img 1',
+    img_two: 'Test Img 2',
+    img_three: 'Test Img 3',
     rating: rand(1..5),
-    user_id: User.ids.sample
+    user_id: User.ids.sample,
+    dream_id: Dream.ids.sample
 )
 
 Memory.create(
     title: 'Test 3',
     desc: 'Test 3',
+    img_one: 'Test Img 1',
+    img_two: 'Test Img 2',
+    img_three: 'Test Img 3',
     rating: rand(1..5),
-    user_id: User.ids.sample
+    user_id: User.ids.sample,
+    dream_id: Dream.ids.sample
 )

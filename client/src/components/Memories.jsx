@@ -1,8 +1,11 @@
 import React from 'react'
+import CreateMemoryFrom from './CreateMemoryFrom'
 
 function Memories() {
   return (
-    <div>Memories</div>
+    <div>Memories
+        <CreateMemoryFrom />
+    </div>
   )
 }
 

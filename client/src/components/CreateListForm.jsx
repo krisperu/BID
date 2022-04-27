@@ -1,8 +1,11 @@
 import React from 'react'
+import AddDetailForm from './AddDetailForm'
 
 function CreateListForm() {
   return (
-    <div>CreateListForm</div>
+    <div>CreateListForm
+        <AddDetailForm />
+    </div>
   )
 }
 
