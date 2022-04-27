@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import CreateListForm from './CreateListForm'
 
-function LandingPage() {
+function LandingPage({ setIsAuthenticated, setUser, user }) {
   const [lists, setLists] = useState([])
 
   useEffect(() => {
@@ -23,9 +23,12 @@ function LandingPage() {
 
   return (
     <div>
-        <div>{listObj}</div>
-        <NavBar />
+        <NavBar 
+          setUser={setUser} 
+          setIsAuthenticated={setIsAuthenticated}
+        />
         <CreateListForm />
+        <div>{listObj}</div>
     </div>
   )
 }

@@ -5,38 +5,29 @@ function Login({ setUser, setIsAuthenticated }) {
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState([])
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  //   fetch(`/login`,{
-  //     method:'POST',
-  //     headers:{
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body:JSON.stringify({
-  //       username, 
-  //       password,
-  //     })
-  //   })
-  //     .then(res => {
-  //       if(res.ok){
-  //         res.json()
-  //         .then(username=>{
-  //           setUser(username)
-  //           setIsAuthenticated(true)
-  //         })
-  //       } else {
-  //         res.json()
-  //         .then((err) => setErrors(err.errors))
-  //       }
-  //   })
-  // }
+    fetch(`/login`,{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, password }),
+        }).then((r) => {
+        if (r.ok) {
+            r.json().then((user) => setUser(user));
+        } else {
+            r.json().then((err) => setErrors(err.errors));
+        }
+        });
+    }
 
   return (
     <div>
        <form 
               className="ui two fields form center"
-              // onSubmit={handleSubmit}
+              onSubmit={handleSubmit}
             >
             <label> Username
               <input

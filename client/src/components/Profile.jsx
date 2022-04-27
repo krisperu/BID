@@ -1,8 +1,14 @@
 import React from 'react'
+import NavBar from './NavBar'
 
-function Profile() {
+function Profile({ setIsAuthenticated, setUser, user }) {
   return (
-    <div>Profile</div>
+    <div>Profile
+      <NavBar
+        setUser={setUser} 
+        // setIsAuthenticated={setIsAuthenticated}
+      />
+    </div>
   )
 }
 

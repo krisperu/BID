@@ -7,27 +7,20 @@ import Memories from './components/Memories'
 import Profile from './components/Profile'
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  // const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
-  // useEffect(() => {
-  //   fetch('/authorize')
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       res.json()
-  //       .then((user) => {
-  //         setIsAuthenticated(true);
-  //         setUser(user);
-  //       });
-  //     }
-  //     else {
-  //       console.log("We received errors...")
-  //     }
-  //   });
-  // },[]);
+  
+  //Auto-login
+  useEffect(() => {
+    fetch("/authorize").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, [])
 
-  // if (!isAuthenticated) return <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
-  // if (!user) return <Login setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+  if (!user) return <Login setUser={setUser} />
 
   return (
     <div>
@@ -35,7 +28,7 @@ function App() {
         <Route exact path="/">
           <LandingPage 
             setUser={setUser} 
-            setIsAuthenticated={setIsAuthenticated}
+            // setIsAuthenticated={setIsAuthenticated}
             user={user}
           />
         </Route>
@@ -49,14 +42,14 @@ function App() {
         <Route path="/login">
           <Login
             setUser={setUser} 
-            setIsAuthenticated={setIsAuthenticated} 
+            // setIsAuthenticated={setIsAuthenticated} 
           />
         </Route>
 
         <Route exact path="/memories">
             <Memories
              setUser={setUser} 
-             setIsAuthenticated={setIsAuthenticated}
+            //  setIsAuthenticated={setIsAuthenticated}
              user={user}
             />
         </Route>
@@ -64,7 +57,7 @@ function App() {
         <Route exact path="/profile">
           <Profile
             setUser={setUser} 
-            setIsAuthenticated={setIsAuthenticated}
+            // setIsAuthenticated={setIsAuthenticated}
             user={user}
           />
         </Route>
