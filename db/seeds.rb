@@ -16,8 +16,8 @@ Memory.destroy_all
 puts "🌱 Seeding Users..."
 User.create(
     username:'admin',
-    password:'pass',
     email:'test',
+    password:'pass',
     name:'Admin Administrator',
     image:'https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     bio:'Test',
@@ -26,8 +26,8 @@ User.create(
 
 User.create(
     username:'user',
-    password:'pass',
     email:'test',
+    password:'pass',
     name:'User',
     image:'https://images.pexels.com/photos/131894/pexels-photo-131894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     bio:'Test',
