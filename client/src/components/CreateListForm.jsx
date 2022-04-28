@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import AddDetailForm from './AddDetailForm'
 
-function CreateListForm({ lists, setLists }) {
+function CreateListForm({ lists, setLists, user }) {
   const [errors, setErrors] = useState([])
   const [formData, setFormData] = useState({
     title: '',
-    user_id: 1
+    user_id: user.id
   })
 
-  const [initialFormState, setInitialFormState] = useState({
+  const initialFormState = ({
     title: '',
     user_id: ''
   })

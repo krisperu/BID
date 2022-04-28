@@ -1,8 +1,10 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :lists
-    has_many :memories
+    has_many :lists, dependent: :destroy
+    has_many :memories, dependent: :destroy
 
-    validates :username, :password, :email, presence: true
+    validates :username, presence: true, uniqueness: true
+    validates :email, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/, uniqueness: true
+    validates :password, presence: true
 end

@@ -16,9 +16,9 @@ function Signup({ user, setUser }) {
     passwordConfirmation: ""
   };
 
-  function onCreateAccount(newUser) {
-    setUser([...user, newUser])
-  }
+  // function onCreateAccount(newUser) {
+  //   setUser([...user, newUser])
+  // }
 
   function handleChange(e) {
     setFormData({
@@ -47,7 +47,7 @@ function Signup({ user, setUser }) {
     })
       .then((r) => {
         if (r.ok) {
-          r.json().then((user) => onCreateAccount(user));
+          r.json().then((user) => setUser(user));
         } else {
           r.json().then((err) => setErrors(err.errors));
         }

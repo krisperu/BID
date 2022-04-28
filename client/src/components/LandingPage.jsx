@@ -5,6 +5,12 @@ import ListCard from './ListCard'
 
 function LandingPage({ setIsAuthenticated, setUser, user }) {
   const [lists, setLists] = useState([])
+  const [showCreateForm, setShowCreateForm] = useState(false)
+
+  function handleCreateForm(showCreateForm) {
+    // e.stopPropagation()
+    setShowCreateForm(!showCreateForm)
+  }
 
   useEffect(() => {
     fetch("/lists")
@@ -13,7 +19,11 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
   }, [])
   
   const listObj = lists.map((list) => 
-    <ListCard list={list} lists={lists} setLists={setLists}/>
+    <ListCard 
+      key={list.id} 
+      list={list} lists={lists} 
+      setLists={setLists}
+    />
   )
 
   return (
@@ -23,11 +33,20 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
           setIsAuthenticated={setIsAuthenticated}
         />
         <br></br>
-        <br></br>
-        <CreateListForm lists={lists} setLists={setLists}/>
         <div>{listObj}</div>
+        <br></br>
+        <div>
+          <button onClick={() => handleCreateForm(showCreateForm)} className="ui icon left labeled button" ><i aria-hidden="true" className="add icon" ></i>Add New List</button>
+        </div>
+        
+        <br></br>
+        <div>
+          {showCreateForm && <CreateListForm user={user} lists={lists} setLists={setLists}/>}
+        </div> 
     </div>
   )
 }
 
 export default LandingPage
+
+// onClick={(e) => handleCreateForm(e, showCreateForm)
