@@ -26,3 +26,8 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.card {
+  border: 2px dotted black;
+  /* width: 75%; */
+}

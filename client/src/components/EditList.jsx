@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditList({ list }) {
+function EditList({ list, onUpdateListTitle }) {
     let history = useHistory();
     const [listFormData, setListFormData] = useState({title: list.title})
   
@@ -11,7 +11,6 @@ function EditList({ list }) {
         [e.target.name]: e.target.value,
       });
     }
-    console.log(list.id)
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -21,9 +20,13 @@ function EditList({ list }) {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(listFormData.title)
+        body: JSON.stringify(listFormData)
       })
       history.push("/")
+      // .then(r => r.json())
+      // .then(updatesList => {
+      //   onUpdateListTitle(updatesList)
+      // })
     }
   
   return (
@@ -40,7 +43,7 @@ function EditList({ list }) {
             />
         </div>
     </div>
-    <button className="ui submit green button center" type="submit">Submit</button>
+    <button className="ui submit button center" type="submit">Submit</button>
 </form>
   )
 }

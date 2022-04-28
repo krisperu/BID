@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import AddDetailForm from './AddDetailForm'
+// import AddDetailForm from './AddDetailForm'
 
 function CreateListForm({ lists, setLists, user }) {
   const [errors, setErrors] = useState([])

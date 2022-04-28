@@ -20,7 +20,7 @@ function Profile({ setUser, user }) {
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
-          <a><i aria-hidden="true" class="user icon"></i>Add Edit Button Here</a>
+          <div>Add Edit Button Here</div>
         </div>
       </div>
       </div>

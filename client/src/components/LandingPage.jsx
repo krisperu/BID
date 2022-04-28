@@ -19,12 +19,17 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
   }, [])
   
   const listObj = lists.map((list) => 
-    <ListCard 
-      key={list.id} 
-      list={list} lists={lists} 
-      setLists={setLists}
-    />
+  <ListCard 
+  key={list.id} 
+  list={list} lists={lists} 
+  setLists={setLists}
+  // onUpdateListTitle={handleUpdateListTitle}
+  />
   )
+
+  // function handleUpdateListTitle(updatedListTitle) {
+  //   setLists(updatedListTitle)
+  // }
 
   return (
     <div>
