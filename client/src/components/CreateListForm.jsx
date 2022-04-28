@@ -51,14 +51,15 @@ function CreateListForm({ lists, setLists, user }) {
   }
 
   return (
-    <div className="background">
+    <div className="center">
+      <div className="background">
         <div className="form-border center-content">
           <div className="ui grid">
             <form 
                 className="ui two fields form center"
                 onSubmit={(e) => handleSubmit(e)}
                 >
-              <label>Title *:</label>
+              <label>Title:</label>
               <input
                 name="title"
                 type="text"
@@ -80,9 +81,9 @@ function CreateListForm({ lists, setLists, user }) {
             </form>
           </div>
         </div>
-        <AddDetailForm />
         <br></br>
       </div>
+    </div>
   )
 }
 

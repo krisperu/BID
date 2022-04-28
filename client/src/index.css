@@ -5,11 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  text-align: center;
 }
 
 .errors {
@@ -24,4 +20,9 @@ code {
   padding-left: 3px;
   display: flex;
   justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
