@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import CreateListForm from './CreateListForm'
+import ListCard from './ListCard'
 
 function LandingPage({ setIsAuthenticated, setUser, user }) {
   const [lists, setLists] = useState([])
@@ -12,13 +13,7 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
   }, [])
   
   const listObj = lists.map((list) => 
-  <div key={list.id}>
-    <div className="container">
-      <div className="card">
-        <h4>{list.title}</h4>
-      </div>
-    </div>
-  </div>
+    <ListCard list={list} lists={lists} setLists={setLists}/>
   )
 
   return (
@@ -27,7 +22,9 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
           setUser={setUser} 
           setIsAuthenticated={setIsAuthenticated}
         />
-        <CreateListForm />
+        <br></br>
+        <br></br>
+        <CreateListForm lists={lists} setLists={setLists}/>
         <div>{listObj}</div>
     </div>
   )

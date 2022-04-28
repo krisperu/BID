@@ -3,4 +3,6 @@ class User < ApplicationRecord
 
     has_many :lists
     has_many :memories
+
+    validates :username, :password, :email, presence: true
 end

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Signup from './Signup'
 
-function Login({ setUser, setIsAuthenticated }) {
+function Login({ setUser, user }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState([])
@@ -29,14 +31,14 @@ function Login({ setUser, setIsAuthenticated }) {
               className="ui two fields form center"
               onSubmit={handleSubmit}
             >
-            <label> Username
+            <label> Username*
               <input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </label>
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password*:</label>
               <input
                 type="password"
                 id="password"
@@ -45,13 +47,15 @@ function Login({ setUser, setIsAuthenticated }) {
               />
             <br></br>
             <div>
-              {/* {errors.map((error) => (
-                <ul className="errors">{error}</ul>
-              ))} */}
+              {errors.map((error) => (
+                <ul key={error} className="errors">{error}</ul>
+              ))}
             </div>
             <br></br>
             <button className="ui submit button center" type="submit">Login</button>
           </form>
+          <button className="ui basic button"><Link to="/signup">Don't have an accout? Sign Up</Link></button>
+          <Signup user={user} setUser={setUser} />
     </div>
   )
 }

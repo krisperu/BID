@@ -7,7 +7,6 @@ import Memories from './components/Memories'
 import Profile from './components/Profile'
 
 function App() {
-  // const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
   
@@ -28,36 +27,33 @@ function App() {
         <Route exact path="/">
           <LandingPage 
             setUser={setUser} 
-            // setIsAuthenticated={setIsAuthenticated}
             user={user}
           />
         </Route>
 
         <Route path="/signup">
           <Signup
-            // onLogin={onLogin}
+            user={user}
+            setUser={setUser}
           />
         </Route>
 
         <Route path="/login">
           <Login
             setUser={setUser} 
-            // setIsAuthenticated={setIsAuthenticated} 
           />
         </Route>
 
         <Route exact path="/memories">
             <Memories
-             setUser={setUser} 
-            //  setIsAuthenticated={setIsAuthenticated}
+             setUser={setUser}
              user={user}
             />
         </Route>
 
         <Route exact path="/profile">
           <Profile
-            setUser={setUser} 
-            // setIsAuthenticated={setIsAuthenticated}
+            setUser={setUser}
             user={user}
           />
         </Route>
