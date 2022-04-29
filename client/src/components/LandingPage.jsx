@@ -5,10 +5,10 @@ import ListCard from './ListCard'
 
 function LandingPage({ setIsAuthenticated, setUser, user }) {
   const [lists, setLists] = useState([])
+  const [dreams, setDreams] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
 
   function handleCreateForm(showCreateForm) {
-    // e.stopPropagation()
     setShowCreateForm(!showCreateForm)
   }
 
@@ -17,12 +17,20 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
     .then((r) => r.json())
     .then(setLists)
   }, [])
+
+  useEffect(() => {
+    fetch("/dreams")
+    .then((r) => r.json())
+    .then(setDreams)
+  })
   
   const listObj = lists.map((list) => 
   <ListCard 
   key={list.id} 
   list={list} lists={lists} 
   setLists={setLists}
+  dreams={dreams}
+  setDreams={setDreams}
   // onUpdateListTitle={handleUpdateListTitle}
   />
   )
@@ -35,7 +43,6 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
     <div>
         <NavBar 
           setUser={setUser} 
-          setIsAuthenticated={setIsAuthenticated}
         />
         <br></br>
         <div>{listObj}</div>

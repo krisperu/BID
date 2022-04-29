@@ -4,7 +4,10 @@ function Dream({ dream }) {
     const [completed, setCompleted] = useState(false)
     // console.log("inside dream:", dream.status)
   return (
-    <li>{dream.dream} done? {completed ? "yes" : "no" }</li>
+    <div>
+      <li>{dream.dream} | Done: {dream.status ? "yes" : "no"}</li>
+    </div>
+    
   )
 }
 

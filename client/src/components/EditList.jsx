@@ -33,7 +33,7 @@ function EditList({ list, onUpdateListTitle }) {
     <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
     <div className="form-row">
         <div className="form-group col-5">
-            <label>Title</label>
+            <label>List Title</label>
             <input 
                 name="title" 
                 type="text"

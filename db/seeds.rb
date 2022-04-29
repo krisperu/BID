@@ -16,7 +16,7 @@ Memory.destroy_all
 puts "🌱 Seeding Users..."
 User.create(
     username:'admin',
-    email:'test',
+    email:'test@mail.com',
     password:'pass',
     name:'Admin Administrator',
     image:'https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -26,7 +26,7 @@ User.create(
 
 User.create(
     username:'user',
-    email:'test',
+    email:'test1@mail.com',
     password:'pass',
     name:'User',
     image:'https://images.pexels.com/photos/131894/pexels-photo-131894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -54,7 +54,7 @@ puts "🌱 Seeding Dreams..."
 Dream.create(
     dream:'Test 1',
     category:'Test 1',
-    status: false,
+    status: true,
     due: '2022-05-04T09:07:00.000Z',
     list_id: List.ids.sample
 )
@@ -70,7 +70,7 @@ Dream.create(
 Dream.create(
     dream:'Test 3',
     category:'Test 3',
-    status: false,
+    status: true,
     due: '2022-05-06T09:07:00.000Z',
     list_id: List.ids.sample
 )
@@ -86,7 +86,7 @@ Dream.create(
 Dream.create(
     dream:'Test 5',
     category:'Test 5',
-    status: false,
+    status: true,
     due: '2022-05-08T09:07:00.000Z',
     list_id: List.ids.sample
 )
@@ -163,3 +163,8 @@ Memory.create(
     user_id: User.ids.sample,
     dream_id: Dream.ids.sample
 )
+
+p "Created #{User.count} users"
+p "Created #{List.count} lists"
+p "Created #{Dream.count} dreams"
+p "Created #{Detail.count} details"

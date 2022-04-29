@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import AddDetailForm from './AddDetailForm'
 
 function CreateListForm({ lists, setLists, user }) {
   const [errors, setErrors] = useState([])
@@ -64,7 +63,7 @@ function CreateListForm({ lists, setLists, user }) {
                 name="title"
                 type="text"
                 id={FormData.title}
-                placeholder="ex. Visit Italy"
+                placeholder="ex. Sport"
                 value={formData.title}
                 onChange={(e) => handleChange(e)}
               />
