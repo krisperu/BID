@@ -6,23 +6,35 @@ import ListCard from './ListCard'
 function LandingPage({ setIsAuthenticated, setUser, user }) {
   const [lists, setLists] = useState([])
   const [dreams, setDreams] = useState([])
+  const [details, setDetails] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
 
   function handleCreateForm(showCreateForm) {
     setShowCreateForm(!showCreateForm)
   }
 
+  //Fetching all Lists
   useEffect(() => {
     fetch("/lists")
     .then((r) => r.json())
     .then(setLists)
   }, [])
 
+  //Fetching all Dreams
   useEffect(() => {
     fetch("/dreams")
     .then((r) => r.json())
     .then(setDreams)
   }, [])
+
+  //Fetching all Details
+  useEffect(() => {
+    fetch("/details")
+    .then((r) => r.json())
+    .then(setDetails)
+  }, [])
+
+  // console.log(details)
   
   const listObj = lists.map((list) => 
   <ListCard 
@@ -31,6 +43,8 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
   setLists={setLists}
   dreams={dreams}
   setDreams={setDreams}
+  details={details}
+  setDetails={setDetails}
   // onUpdateListTitle={handleUpdateListTitle}
   />
   )

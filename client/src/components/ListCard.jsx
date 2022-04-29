@@ -3,7 +3,7 @@ import EditList from './EditList'
 import Dream from './Dream'
 import AddDreamForm from './AddDreamForm'
 
-function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams }) {
+function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams, details, setDetails }) {
   const [showEditForm, setShowEditForm] = useState(false)
   const [showAddDreamForm, setShowAddDreamForm] = useState(false)
 
@@ -18,17 +18,18 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams 
   }
  
   const deleteList = (id) => {
-      fetch(`/lists/${id}`, {
-          method: "DELETE",
-      }).then((r) => {
-          if (r.ok) {
-              setLists(lists.filter((list) => list.id !== id));
-          }
-      });
+    fetch(`/lists/${id}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setLists(lists.filter((list) => list.id !== id));
+      }
+    });
   }
   const dream = list.dreams.map((dream) => 
-  <Dream key={dream.id} dream={dream}/>
+  <Dream key={dream.id} dream={dream} details={details} setDetails={setDetails}/>
   )
+  // console.log(list)
   
 
   return (
