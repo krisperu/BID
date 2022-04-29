@@ -22,7 +22,7 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
     fetch("/dreams")
     .then((r) => r.json())
     .then(setDreams)
-  })
+  }, [])
   
   const listObj = lists.map((list) => 
   <ListCard 
