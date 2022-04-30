@@ -15,6 +15,10 @@ function Dream({ dream, details, setDetails }) {
   return (
     <div>
       <li>{dream.dream} | Done: {dream.status ? "yes" : "no"}</li>
+        <label className="container">{dream.dream}
+          <input type="checkbox" checked="checked" />
+          <span class="checkmark"></span>
+        </label>
       <button className="ui mini circular icon button" onClick={(e) => handleShowDetail(e, showDetail)}><i aria-hidden="true" className="angle down icon"></i></button>
       {showDetail &&<div>{detailObj}</div>}
     </div>
