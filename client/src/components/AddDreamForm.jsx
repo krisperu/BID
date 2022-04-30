@@ -61,59 +61,50 @@ function AddDreamForm({ list, dreams, setDreams }) {
 
   return (
     <div className="center">
-      <div className="background">
-        <div className="form-border center-content">
-          <div className="ui grid">
-            <form 
-                className="ui two fields form center"
-                onSubmit={(e) => handleSubmit(e)}
-            >
-              <label>Dream:</label>
-              <input
-                name="dream"
-                type="text"
-                id={FormData.dream}
-                placeholder="ex. Visit Italy"
-                value={dreamFormData.dream}
-                onChange={(e) => handleChange(e)}
-              />
-              <label>Category:</label>
-              <select
-                name="category"
-                // type="text"
-                id={FormData.category}
-                // placeholder="ex. Visit Italy"
-                value={dreamFormData.category}
-                onChange={(e) => handleChange(e)}
-              >
-                <option value="">Select a Category</option>
-                <option value="1">Test 1</option>
-                <option value="2">Test 2</option>
-              </select>
-              
-              <label>Finish By:</label>
-              <input
-                name="due"
-                type="date"
-                id={FormData.due}
-                value={dreamFormData.due}
-                onChange={(e) => handleChange(e)}
-              />
-              <br></br>
-              <div>
-                {errors.map((error) => (
-                  <ul key={error} className="errors">- {error}</ul>
-                ))}
-              </div>
-              <br></br>
-              <button className="ui submit button center" type="submit">Create</button>
-              <br></br>
-              <br></br>
-            </form>
-          </div>
+      <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
+        <div className="form-row">
+            <div className="form-group col-5">
+                <label>Dream</label>
+                <input
+                  name="dream"
+                  type="text"
+                  id={FormData.dream}
+                  placeholder="ex. Visit Italy"
+                  value={dreamFormData.dream}
+                  onChange={(e) => handleChange(e)}
+                />
+            </div>
+            <div className="form-group col-5">
+                <label>Category</label>
+                <select
+                  name="category"
+                  id={FormData.category}
+                  value={dreamFormData.category}
+                  onChange={(e) => handleChange(e)}
+                >
+                  <option value="">Select a Category</option>
+                  <option value="1">Test 1</option>
+                  <option value="2">Test 2</option>
+                </select>
+            </div>
         </div>
-        <br></br>
-      </div>
+        <div className="form-row">
+            <div className="form-group col-7">
+                <label>Finish By</label>
+                <input
+                  name="due"
+                  type="date"
+                  id={FormData.due}
+                  value={dreamFormData.due}
+                  onChange={(e) => handleChange(e)}
+                />
+            </div>
+            {errors.map((error) => (
+              <ul key={error} className="errors">- {error}</ul>
+            ))}
+        </div>
+        <button className="ui submit grey button center" type="submit">Submit</button>
+      </form>
     </div>
   )
 }

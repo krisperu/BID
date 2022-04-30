@@ -34,23 +34,28 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
 
   return (
     <div key={list.id} className="card">
-      <div className="title">
-        <div>
-          <h4>{list.title}</h4>
+      <div className="ui centered card">
+        <div className="content">
+        <button className="ui mini right floated circular basic icon button" onClick={(e) => deleteList(list.id)}><i aria-hidden="true" className="close link icon"></i></button>
+          <button className="ui mini right floated circular basic icon button"  onClick={(e) => handleEditForm(e, showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
+          <div className="header">{list.title}</div>
+          <br></br>
+          {showEditForm && <EditList list={list} onUpdateListTitle={onUpdateListTitle}/>}
+          {/* <div className="meta">Friends of Elliot</div> */}
+          <div className="description">{dream}</div>
         </div>
-        <button className="ui mini circular icon button"  onClick={(e) => handleEditForm(e, showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
-        <button className="ui mini circular icon button" onClick={(e) => deleteList(list.id)}><i aria-hidden="true" className="close link icon"></i></button>
-        {showEditForm && <EditList list={list} onUpdateListTitle={onUpdateListTitle}/>}
+        <div className="extra content">
+          <div className="ui buttons">
+          <button onClick={(e) => handleAddDreamForm(e, showAddDreamForm)} className="ui icon left labeled basic grey mini button" ><i aria-hidden="true" className="add icon" ></i>Add New Dream</button>
+          </div>
+          {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams}/>}
+        </div>
       </div>
       <br></br>
-          <div>{dream}</div>
-          <button onClick={(e) => handleAddDreamForm(e, showAddDreamForm)} className="ui icon left labeled mini button" ><i aria-hidden="true" className="add icon" ></i>Add New Dream</button>
-          <br></br>
-          <br></br>
-          {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams}/>}
-      
     </div>
   )
 }
 
 export default ListCard
+
+ 

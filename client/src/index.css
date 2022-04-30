@@ -27,11 +27,32 @@ body {
   justify-content: center;
 }
 
-.card {
-  border: 1px solid plum;
-}
+/* .card {
+  border: 1px solid purple;
+  display: flex;
+  justify-content: center;
+  background-color: plum;
+  flex-direction: row;
+} */
 
 .title {
   border: 2px dotted black;
-  /* width: 75%; */
+  background-color: green;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.header {
+  background-color: #F1E3D3;
+}
+/* .content {
+  background-color: plum;
+  padding: 7px;
+} */
+.extra content {
+  background-color: #F1E3D3
 }

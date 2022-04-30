@@ -59,16 +59,16 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
           setUser={setUser} 
         />
         <br></br>
-        <div>{listObj}</div>
-        <br></br>
         <div>
           <button onClick={() => handleCreateForm(showCreateForm)} className="ui icon left labeled button" ><i aria-hidden="true" className="add icon" ></i>Add New List</button>
         </div>
-        
         <br></br>
         <div>
           {showCreateForm && <CreateListForm user={user} lists={lists} setLists={setLists}/>}
+        <br></br>
         </div> 
+        <div className="list">{listObj}</div>
+        <br></br>
     </div>
   )
 }
