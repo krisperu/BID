@@ -66,7 +66,7 @@ function Signup({ user, setUser }) {
                 >
                 <div>
                   {errors.map((error) => (
-                    <ul className="errors">- {error}</ul>
+                    <ul className="errors">・ {error}</ul>
                   ))}
                 </div>
               <label htmlFor="username">Username:</label>

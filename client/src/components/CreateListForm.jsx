@@ -9,7 +9,7 @@ function CreateListForm({ lists, setLists, user }) {
 
   const initialFormState = ({
     title: '',
-    user_id: ''
+    user_id: user.id
   })
 
   function onCreateList(newList) {
@@ -51,37 +51,27 @@ function CreateListForm({ lists, setLists, user }) {
 
   return (
     <div className="center">
-      <div className="background">
-        <div className="form-border center-content">
-          <div className="ui grid">
-            <form 
-                className="ui two fields form center"
-                onSubmit={(e) => handleSubmit(e)}
-                >
-              <label>Title:</label>
-              <input
-                name="title"
-                type="text"
-                id={FormData.title}
-                placeholder="ex. Sport"
-                value={formData.title}
-                onChange={(e) => handleChange(e)}
+      <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
+      <div className="form-row">
+          <div className="six wide field">
+              <label>Title</label>
+              <input 
+                  name="title" 
+                  type="text"
+                  placeholder="ex. Sport"
+                  id={FormData.title}
+                  value={formData.title}
+                  onChange={(e) => handleChange(e)}
               />
-              <br></br>
-              <div>
-                {errors.map((error) => (
-                  <ul key={error} className="errors">- {error}</ul>
-                ))}
-              </div>
-              <br></br>
-              <button className="ui submit button center" type="submit">Create</button>
-              <br></br>
-              <br></br>
-            </form>
           </div>
-        </div>
-        <br></br>
+          <div>
+            {errors.map((error) => (
+              <ul key={error} className="errors">・ {error}</ul>
+            ))}
+          </div>
       </div>
+      <button className="ui submit basic button center" type="submit">Submit</button>
+      </form>
     </div>
   )
 }

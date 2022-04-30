@@ -2,7 +2,9 @@ import React from 'react'
 
 function Detail({ detail }) {
   return (
-    <div>{detail.details}</div>
+    <div>
+      <li>{detail.details}</li>
+    </div>
   )
 }
 

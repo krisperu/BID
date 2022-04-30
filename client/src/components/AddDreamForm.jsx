@@ -5,7 +5,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
     const [dreamFormData, setDreamFormData] = useState({
         dream: '',
         category: '',
-        status: '',
+        status: false,
         due: '',
         list_id: list.id
     })
@@ -15,7 +15,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
         category: '',
         status: '',
         due: '',
-        list_id: ''
+        list_id: list.id
     })
 
     function onCreateDream(newDream) {
@@ -63,7 +63,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
     <div className="center">
       <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
         <div className="form-row">
-            <div className="form-group col-5">
+            <div className="form">
                 <label>Dream</label>
                 <input
                   name="dream"
@@ -74,7 +74,9 @@ function AddDreamForm({ list, dreams, setDreams }) {
                   onChange={(e) => handleChange(e)}
                 />
             </div>
-            <div className="form-group col-5">
+        </div>
+        <div className="form-row">
+          <div className="form">
                 <label>Category</label>
                 <select
                   name="category"
@@ -87,9 +89,9 @@ function AddDreamForm({ list, dreams, setDreams }) {
                   <option value="2">Test 2</option>
                 </select>
             </div>
-        </div>
+        </div>   
         <div className="form-row">
-            <div className="form-group col-7">
+            <div className="form">
                 <label>Finish By</label>
                 <input
                   name="due"
@@ -100,10 +102,10 @@ function AddDreamForm({ list, dreams, setDreams }) {
                 />
             </div>
             {errors.map((error) => (
-              <ul key={error} className="errors">- {error}</ul>
+              <ul key={error} className="errors">・ {error}</ul>
             ))}
         </div>
-        <button className="ui submit grey button center" type="submit">Submit</button>
+        <button className="ui submit grey basic button center" type="submit">Submit</button>
       </form>
     </div>
   )

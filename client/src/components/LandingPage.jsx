@@ -5,7 +5,6 @@ import ListCard from './ListCard'
 
 function LandingPage({ setUser, user, dreams, setDreams }) {
   const [lists, setLists] = useState([])
-  // const [dreams, setDreams] = useState([])
   const [details, setDetails] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
 
@@ -20,13 +19,6 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
     .then(setLists)
   }, [])
 
-  // //Fetching all Dreams
-  // useEffect(() => {
-  //   fetch("/dreams")
-  //   .then((r) => r.json())
-  //   .then(setDreams)
-  // }, [])
-
   //Fetching all Details
   useEffect(() => {
     fetch("/details")
@@ -35,6 +27,9 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
   }, [])
 
   // console.log(details)
+  function handleUpdateListTitle(updatedListTitle) {
+    setLists(updatedListTitle)
+  }
   
   const listObj = lists.map((list) => 
   <ListCard 
@@ -45,13 +40,10 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
   setDreams={setDreams}
   details={details}
   setDetails={setDetails}
-  // onUpdateListTitle={handleUpdateListTitle}
+  onUpdateListTitle={handleUpdateListTitle}
   />
   )
 
-  // function handleUpdateListTitle(updatedListTitle) {
-  //   setLists(updatedListTitle)
-  // }
 
   return (
     <div>
