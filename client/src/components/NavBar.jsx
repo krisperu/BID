@@ -1,26 +1,25 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 
-function NavBar({ setIsAuthenticated, setUser, user }) {
+function NavBar({ setUser, user }) {
 
   const logout = () => {
     fetch('/logout',{
         method:'DELETE'
     })
     .then(()=>{
-        // setIsAuthenticated(false)
         setUser(null)
     })
   }
 
   return (
-    <div>
+    <aside className="ui color vertical menu">
       <NavLink
         to="/"
         exact
-        className="ui center floated button"
+        className="ui item"
         activeStyle={{
-          background: "#E6E6E8",
+          background: "#EDEADE",
         }}
       >
         Home
@@ -29,9 +28,9 @@ function NavBar({ setIsAuthenticated, setUser, user }) {
       <NavLink
         to="/memories"
         exact
-        className="ui center floated button"
+        className="ui item"
         activeStyle={{
-          background: "#E6E6E8",
+          background: "#EDEADE",
         }}
       >
         Memories
@@ -40,16 +39,16 @@ function NavBar({ setIsAuthenticated, setUser, user }) {
       <NavLink
         to="/profile"
         exact
-        className="ui center floated button"
+        className="ui item"
         activeStyle={{
-          background: "#E6E6E8",
+          background: "#EDEADE",
         }}
       >
         Profile
       </NavLink>
 
-      <button className="ui center floated button" onClick={()=>logout()}>Logout</button>
-    </div>
+      <button className="ui fluid basic button" onClick={()=>logout()}>Logout</button>
+    </aside>
   )
 }
 

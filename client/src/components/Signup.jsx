@@ -104,7 +104,7 @@ function Signup({ user, setUser }) {
               />
               <br></br>
               <br></br>
-              <button className="ui submit button center" type="submit">Sign Up</button>
+              <button className="ui basic submit button center" type="submit">Sign Up</button>
             </form>
           </div>
         </div>

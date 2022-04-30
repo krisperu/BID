@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Signup from './Signup'
 
 function Login({ setUser, user }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState([])
+  const [showSignup, setShowSignup] = useState(false)
+
+  function handleSignup(showSignup) {
+    setShowSignup(!showSignup)
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,35 +32,48 @@ function Login({ setUser, user }) {
 
   return (
     <div>
-       <form 
-              className="ui two fields form center"
-              onSubmit={handleSubmit}
-            >
-            <label> Username*
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </label>
-            <label htmlFor="password">Password*:</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            <br></br>
-            <div>
-              {errors.map((error) => (
-                <ul key={error} className="errors">{error}</ul>
-              ))}
-            </div>
-            <br></br>
-            <button className="ui submit button center" type="submit">Login</button>
-          </form>
-          <button className="ui basic button"><Link to="/signup">Don't have an accout? Sign Up</Link></button>
-          <Signup user={user} setUser={setUser} />
+      <div>
+        <img src="https://images.pexels.com/photos/7283618/pexels-photo-7283618.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Login/Signup Page"/>
+      </div>
+      <div className="login_page">
+        <div className="logo">
+          <h1>Before I Die</h1>
+          A Bucket List App
+        </div>
+        <div className="form_padding">
+          <form 
+          className="ui two fields form center"
+          onSubmit={handleSubmit}
+        >
+          <label> Username*
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label>
+          <label htmlFor="password">Password*</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          <br></br>
+          <div>
+            {errors.map((error) => (
+              <ul key={error} className="errors">{error}</ul>
+            ))}
+          </div>
+          <br></br>
+          <button className="ui basic submit button center" type="submit">Login</button>
+        </form>
+        <br></br>
+        <button onClick={()=> handleSignup(showSignup)} className="ui basic button">Don't have an accout? Sign Up</button>
+        {showSignup &&<Signup user={user} setUser={setUser}/>}
+        </div>
+        
+      </div>
     </div>
   )
 }

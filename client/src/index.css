@@ -1,58 +1,113 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background-color: #FAF9F6;
+  }
+  
+  /* Sidebar */
+aside {
+    height: 100%;
+    width: 160px; 
+    position: fixed;
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #F9F6EE;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+aside button {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  /* Login/Signup Page */
+.login_page {
+    height: 100%;
+    width: 460px; 
+    position: fixed;
+    z-index: 1; 
+    top: 0; 
+    right: 0;
+    background-color: #F9F6EE;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
+
+img {
+  height: 1100px;
+  width: 100%;
+  position: right;
+}
+
+.form_padding {
+  padding: 20px;
+}
+
+/* The navigation menu links */
+.ui.color.vertical.menu{
+  background-color: #F9F6EE;
+  color: black;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+  
+  /* Page Body */
+.main {
+    margin-left: 200px; 
+    padding: 0px 10px;
+  }
+
+.background {
+  justify-content: center;
+}
+
+  /* Logo */
+h1 {
+    font-family: 'Architects Daughter';
+    font-size: 40px;
+  }
+
+.logo {
+    border-bottom: 1px solid #99C1B9;
+  }
 
 .errors {
-  color: red;
-}
+    color: red;
+  }
 
-.footer {
-  border-top: 1px solid gray;
-  color: #707070;
-  text-align: left;
-  padding-bottom: 2px;
-  padding-left: 3px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-}
-
-/* .card {
-  border: 1px solid purple;
-  display: flex;
-  justify-content: center;
-  background-color: plum;
-  flex-direction: row;
-} */
-
+  /* Landing Page */
 .title {
-  border: 2px dotted black;
-  background-color: green;
-}
+    border: 2px dotted black;
+    background-color: green;
+  }
 
 .list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 
 .header {
-  background-color: #F1E3D3;
-}
-/* .content {
-  background-color: plum;
-  padding: 7px;
-} */
-.extra content {
-  background-color: #F1E3D3
-}
+    background-color: #F1E3D3;
+    height: 37px;
+  }
+
+.footer {
+    border-top: 1px solid #99C1B9;
+    color: #707070;
+    text-align: left;
+    padding-bottom: 2px;
+    padding-left: 3px;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0px;
+  }

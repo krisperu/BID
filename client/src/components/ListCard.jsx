@@ -36,19 +36,20 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
     <div key={list.id} className="card">
       <div className="ui centered card">
         <div className="content">
-        <button className="ui mini right floated circular basic icon button" onClick={(e) => deleteList(list.id)}><i aria-hidden="true" className="close link icon"></i></button>
+          <button className="ui mini right floated circular basic icon button" onClick={(e) => deleteList(list.id)}><i aria-hidden="true" className="close link icon"></i></button>
           <button className="ui mini right floated circular basic icon button"  onClick={(e) => handleEditForm(e, showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
-          <div className="header">{list.title}</div>
-          <br></br>
+          <button className="ui mini right floated circular basic icon button"  onClick={(e) => console.log("email me!")}><i aria-hidden="true" className="mail outline icon"></i></button>
+        <div className="header">{list.title}</div>
+        <br></br>
           {showEditForm && <EditList list={list} onUpdateListTitle={onUpdateListTitle}/>}
           {/* <div className="meta">Friends of Elliot</div> */}
-          <div className="description">{dream}</div>
-        </div>
+        <div className="description">{dream}</div>
+      </div>
         <div className="extra content">
           <div className="ui buttons">
-          <button onClick={(e) => handleAddDreamForm(e, showAddDreamForm)} className="ui icon left labeled basic grey mini button" ><i aria-hidden="true" className="add icon" ></i>Add New Dream</button>
+            <button onClick={(e) => handleAddDreamForm(e, showAddDreamForm)} className="ui icon left labeled basic grey mini button" ><i aria-hidden="true" className="add icon" ></i>Add New Dream</button>
           </div>
-          {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams}/>}
+            {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams}/>}
         </div>
       </div>
       <br></br>

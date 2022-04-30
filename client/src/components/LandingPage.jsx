@@ -60,7 +60,7 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
         />
         <br></br>
         <div>
-          <button onClick={() => handleCreateForm(showCreateForm)} className="ui icon left labeled button" ><i aria-hidden="true" className="add icon" ></i>Add New List</button>
+          <button onClick={() => handleCreateForm(showCreateForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add New List</button>
         </div>
         <br></br>
         <div>
@@ -74,5 +74,3 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
 }
 
 export default LandingPage
-
-// onClick={(e) => handleCreateForm(e, showCreateForm)

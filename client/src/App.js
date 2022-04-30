@@ -29,7 +29,12 @@ function App() {
   if (!user) return <Login setUser={setUser} />
 
   return (
-    <div>
+    <div className="main">
+      <div className="logo">
+        <h1>Before I Die</h1>
+        A Bucket List App
+      </div>
+      
       <Switch>
         <Route exact path="/">
           <LandingPage 
