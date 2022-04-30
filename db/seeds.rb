@@ -52,48 +52,48 @@ List.create(
 
 puts "🌱 Seeding Dreams..."
 Dream.create(
-    dream:'Test 1',
-    category:'Test 1',
+    dream:'Go to Greece',
+    category:'Travel',
     status: true,
     due: '2022-05-04T09:07:00.000Z',
     list_id: List.ids.sample
 )
 
 Dream.create(
-    dream:'Test 2',
-    category:'Test 2',
+    dream:'See the Pyramids',
+    category:'Travel',
     status: false,
     due: '2022-05-05T09:07:00.000Z',
     list_id: List.ids.sample
 )
 
 Dream.create(
-    dream:'Test 3',
-    category:'Test 3',
+    dream:'Learn Photography',
+    category:'Learn',
     status: true,
     due: '2022-05-06T09:07:00.000Z',
     list_id: List.ids.sample
 )
 
 Dream.create(
-    dream:'Test 4',
-    category:'Test 4',
+    dream:'Go on a trip out of state',
+    category:'Summer',
     status: false,
     due: '2022-05-07T09:07:00.000Z',
     list_id: List.ids.sample
 )
 
 Dream.create(
-    dream:'Test 5',
-    category:'Test 5',
+    dream:'Have a bonfire',
+    category:'Summer',
     status: true,
     due: '2022-05-08T09:07:00.000Z',
     list_id: List.ids.sample
 )
 
 Dream.create(
-    dream:'Test 6',
-    category:'Test 6',
+    dream:'Go to India',
+    category:'Travel',
     status: false,
     due: '2022-05-09T09:07:00.000Z',
     list_id: List.ids.sample
@@ -102,31 +102,31 @@ Dream.create(
 puts "🌱 Seeding Details..."
 Detail.create(
     details: 'Test 1',
-    image: 'Test 1',
+    image: 'https://picsum.photos/200/300?grayscale',
     dream_id: Dream.ids.sample
 )
 
 Detail.create(
     details: 'Test 2',
-    image: 'Test 2',
+    image: 'https://picsum.photos/200/300?grayscale',
     dream_id: Dream.ids.sample
 )
 
 Detail.create(
     details: 'Test 3',
-    image: 'Test 3',
+    image: 'https://picsum.photos/200/300?grayscale',
     dream_id: Dream.ids.sample
 )
 
 Detail.create(
     details: 'Test 4',
-    image: 'Test 4',
+    image: 'https://picsum.photos/200/300?grayscale',
     dream_id: Dream.ids.sample
 )
 
 Detail.create(
     details: 'Test 5',
-    image: 'Test 5',
+    image: 'https://picsum.photos/200/300?grayscale',
     dream_id: Dream.ids.sample
 )
 

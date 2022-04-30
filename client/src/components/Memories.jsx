@@ -2,12 +2,11 @@ import React from 'react'
 import NavBar from './NavBar'
 import CreateMemoryFrom from './CreateMemoryFrom'
 
-function Memories({ setIsAuthenticated, setUser, user }) {
+function Memories({ setUser, user, dream }) {
   return (
     <div>Memories
       <NavBar 
         setUser={setUser} 
-        // setIsAuthenticated={setIsAuthenticated}
       />
       <CreateMemoryFrom />
     </div>

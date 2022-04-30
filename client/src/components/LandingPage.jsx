@@ -3,9 +3,9 @@ import NavBar from './NavBar'
 import CreateListForm from './CreateListForm'
 import ListCard from './ListCard'
 
-function LandingPage({ setIsAuthenticated, setUser, user }) {
+function LandingPage({ setUser, user, dreams, setDreams }) {
   const [lists, setLists] = useState([])
-  const [dreams, setDreams] = useState([])
+  // const [dreams, setDreams] = useState([])
   const [details, setDetails] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
 
@@ -20,12 +20,12 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
     .then(setLists)
   }, [])
 
-  //Fetching all Dreams
-  useEffect(() => {
-    fetch("/dreams")
-    .then((r) => r.json())
-    .then(setDreams)
-  }, [])
+  // //Fetching all Dreams
+  // useEffect(() => {
+  //   fetch("/dreams")
+  //   .then((r) => r.json())
+  //   .then(setDreams)
+  // }, [])
 
   //Fetching all Details
   useEffect(() => {

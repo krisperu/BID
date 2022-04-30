@@ -8,7 +8,14 @@ import Profile from './components/Profile'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [dreams, setDreams] = useState([])
 
+  //Fetching all Dreams
+  useEffect(() => {
+   fetch("/dreams")
+   .then((r) => r.json())
+   .then(setDreams)
+ }, [])
   
   //Auto-login
   useEffect(() => {
@@ -28,6 +35,8 @@ function App() {
           <LandingPage 
             setUser={setUser} 
             user={user}
+            dreams={dreams}
+            setDreams={setDreams}
           />
         </Route>
 
@@ -48,6 +57,7 @@ function App() {
             <Memories
              setUser={setUser}
              user={user}
+             dreams={dreams}
             />
         </Route>
 
