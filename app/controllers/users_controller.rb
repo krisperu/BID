@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     def show
         user_id = User.find_by(id: session[:user_id])
-        render json: user_id, status: :ok
+        render json: user_id, status: :ok, include: ['lists', 'lists.dreams']
     end
 
     def create

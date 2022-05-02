@@ -28,6 +28,16 @@ function App() {
 
   if (!user) return <Login setUser={setUser} />
 
+  // const dreamObj = user.dreams.filter(dream => dream.status === false).map(filteredDream =>
+  //   <Memories 
+  //     dream={filteredDream}
+  //     setUser={setUser}
+  //     user={user}
+  //     dreams={dreams}
+  //     />
+  //   )
+  console.log(user.lists)
+
   return (
     <div className="main">
       <div className="logo">
@@ -58,13 +68,9 @@ function App() {
           />
         </Route>
 
-        <Route exact path="/memories">
-            <Memories
-             setUser={setUser}
-             user={user}
-             dreams={dreams}
-            />
-        </Route>
+        {/* <Route exact path="/memories">
+            {dreamObj}
+        </Route> */}
 
         <Route exact path="/profile">
           <Profile

@@ -18,10 +18,10 @@ function Dream({ dream, details, setDetails }) {
   }
 
   function handleCheck(){
-    setChecked((checked) !==checked)
+    setChecked((checked) => !checked)
   }
 
-  // console.log(checked)
+  console.log(checked)
 
   const detailObj = dream.details?.map((detail) => 
     <Detail key={detail.id} detail={detail}/>
@@ -30,16 +30,16 @@ function Dream({ dream, details, setDetails }) {
   return (
     <div>
       <button className="ui mini right floated circular basic icon button" onClick={(e) => handleShowDetail(e, showDetail)}><i aria-hidden="true" className="angle down icon"></i></button>
-      <div className="dreamTitle">
-        <label onChange={(e) => handleCheck(e)} className="container">{dream.dream}
-        <input type="checkbox"  />
+      <form className="dreamTitle">
+        <label className="container">{dream.dream}
+        <input type="checkbox" onChange={(e) => handleCheck(e)} />
         <span className="checkmark"></span>
       </label>
-      </div>
+      </form>
       
       {showDetail &&
         <div>{detailObj}
-        <button className="ui mini  floated circular basic icon button" onClick={(e) => handleShowAddDetail(e, showAddDetail)}><i aria-hidden="true" className="add icon"></i></button>
+        <button className="ui mini floated circular basic icon button" onClick={(e) => handleShowAddDetail(e, showAddDetail)}><i aria-hidden="true" className="add icon"></i></button>
           {showAddDetail &&<div>
             <AddDetailForm 
               dream={dream} 

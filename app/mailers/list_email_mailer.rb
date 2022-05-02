@@ -1,0 +1,2 @@
+class ListEmailMailer < ApplicationMailer
+end
