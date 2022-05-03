@@ -24,6 +24,10 @@ class DreamsController < ApplicationController
         head :no_content
     end
 
+    def show_complete
+        
+    end
+
     private
 
     def find_dream

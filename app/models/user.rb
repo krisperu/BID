@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_secure_password
 
     has_many :lists, dependent: :destroy
+    has_many :dreams, through: :lists
     has_many :memories, dependent: :destroy
 
     validates :username, presence: true, uniqueness: true

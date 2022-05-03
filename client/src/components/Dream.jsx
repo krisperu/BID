@@ -29,7 +29,7 @@ function Dream({ dream, details, setDetails }) {
 
   function handleCheckmark(){
     const check = {
-      status: setChecked((checked) => !checked)
+      status: !checked
     }
     fetch(`/dreams/${dream.id}`, {
       method: 'PATCH',
@@ -37,7 +37,7 @@ function Dream({ dream, details, setDetails }) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(check)
-    }).then(r => r.json())
+    }).then(() => setChecked(!checked))
   }
 
   return (

@@ -2,11 +2,12 @@ class ListMailer < ApplicationMailer
     default from: 'beforeidieapplication@gmail.com'
 
     def send_list
-        # @sending_list = sending_list
-        # @user = params[:user]
+        @sending_list = params[:sending_list]
+        puts params.inspect
+        @user = params[:user]
         @url = 'https://beforeidieapp.herokuapp.com/'
         mail(
-            to: "krissy_hollister3@yahoo.com", 
+            to: @user.email, 
             subject: "Test email"
         )
     end

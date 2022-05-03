@@ -68,9 +68,14 @@ function App() {
           />
         </Route>
 
-        {/* <Route exact path="/memories">
-            {dreamObj}
-        </Route> */}
+        <Route exact path="/memories">
+            <Memories 
+      // dream={filteredDream}
+      setUser={setUser}
+      user={user}
+      dreams={dreams}
+      />
+        </Route>
 
         <Route exact path="/profile">
           <Profile
