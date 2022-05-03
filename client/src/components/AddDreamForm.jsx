@@ -22,8 +22,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
         setDreams([...dreams, newDream])
     }
 
-    function handleSubmit(e){
-        e.preventDefault()
+    function handleSubmit(){
         setErrors([])
 
         const newDream = {
@@ -61,7 +60,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
 
   return (
     <div className="center">
-      <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
+      <form className="ui form" onSubmit={handleSubmit}> 
         <div className="form-row">
             <div className="form">
                 <label>Dream</label>
@@ -75,7 +74,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
                 />
             </div>
         </div>
-        <div className="form-row">
+        {/* <div className="form-row">
           <div className="form">
                 <label>Category</label>
                 <select
@@ -89,7 +88,7 @@ function AddDreamForm({ list, dreams, setDreams }) {
                   <option value="2">Test 2</option>
                 </select>
             </div>
-        </div>   
+        </div>    */}
         <div className="form-row">
             <div className="form">
                 <label>Finish By</label>

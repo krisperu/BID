@@ -23,7 +23,7 @@ class ListsController < ApplicationController
         sending_list = List.find(params[:id])
         sending_list.update!(list_params)
         # sending_user = User.find(List.user_id)
-        ListMailer.with(sending_list: @sending_list, user: user_id).send_list.deliver_now
+        ListMailer.send_list(sending_list).deliver_now
         render json: sending_list, status: :accepted
     end
 

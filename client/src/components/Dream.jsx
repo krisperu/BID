@@ -17,22 +17,35 @@ function Dream({ dream, details, setDetails }) {
     setShowAddDetail(!showAddDetail)
   }
 
-  function handleCheck(){
-    setChecked((checked) => !checked)
-  }
+  // function handleCheck(){
+  //   setChecked((checked) => !checked)
+  // }
 
-  console.log(checked)
+  // console.log(checked)
 
   const detailObj = dream.details?.map((detail) => 
     <Detail key={detail.id} detail={detail}/>
   )
+
+  function handleCheckmark(){
+    const check = {
+      status: setChecked((checked) => !checked)
+    }
+    fetch(`/dreams/${dream.id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(check)
+    }).then(r => r.json())
+  }
 
   return (
     <div>
       <button className="ui mini right floated circular basic icon button" onClick={(e) => handleShowDetail(e, showDetail)}><i aria-hidden="true" className="angle down icon"></i></button>
       <form className="dreamTitle">
         <label className="container">{dream.dream}
-        <input type="checkbox" onChange={(e) => handleCheck(e)} />
+        <input type="checkbox" onChange={handleCheckmark} />
         <span className="checkmark"></span>
       </label>
       </form>

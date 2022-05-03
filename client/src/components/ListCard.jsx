@@ -53,7 +53,7 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
         <div className="content">
           <button className="ui mini right floated circular basic icon button" onClick={(e) => deleteList(list.id)}><i aria-hidden="true" className="close link icon"></i></button>
           <button className="ui mini right floated circular basic icon button"  onClick={(e) => handleEditForm(e, showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
-          <button className="ui mini right floated circular basic icon button"  onClick={(e) => {handleSendClick(e)}}><i aria-hidden="true" className="mail outline icon"></i></button>
+          <button className="ui mini right floated circular basic icon button"  onClick={handleSendClick}><i aria-hidden="true" className="mail outline icon"></i></button>
         <div className="header">{list.title}</div>
         <br></br>
           {showEditForm && <EditList list={list} onUpdateListTitle={onUpdateListTitle}/>}

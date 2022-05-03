@@ -18,8 +18,7 @@ function AddDetailForm({ dream, details, setDetails }) {
     setDetails([...details, newDetail])
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit() {
     setErrors([])
 
     const newDetail ={
@@ -54,7 +53,7 @@ function AddDetailForm({ dream, details, setDetails }) {
 
   return (
     <div>
-      <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
+      <form className="ui form" onSubmit={handleSubmit}> 
         <div className="form-row">
             <div className="form-group col-5">
                 <label>Detail</label>

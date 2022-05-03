@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function EditList({ list, onUpdateListTitle }) {
-    // let history = useHistory();
+    let history = useHistory();
     const [listFormData, setListFormData] = useState({title: list.title})
   
     function handleChange(e) {
@@ -12,9 +12,7 @@ function EditList({ list, onUpdateListTitle }) {
       });
     }
   
-    function handleSubmit(e) {
-      e.preventDefault();
-  
+    function handleSubmit() {
       fetch(`/lists/${list.id}`, { 
         method: "PATCH",
         headers: {
@@ -22,15 +20,11 @@ function EditList({ list, onUpdateListTitle }) {
         },
         body: JSON.stringify(listFormData)
       })
-      // history.push("/")
-      .then(r => r.json())
-      .then(updatesList => {
-        onUpdateListTitle(updatesList)
-      })
+      history.push("/")
     }
   
   return (
-    <form className="ui form" onSubmit={(e) => handleSubmit(e)}> 
+    <form className="ui form" onSubmit={handleSubmit}> 
       <div className="form-row">
           <div className="form-group col-5">
               <label>List Title</label>
