@@ -9,12 +9,19 @@ import Profile from './components/Profile'
 function App() {
   const [user, setUser] = useState(null)
   const [dreams, setDreams] = useState([])
+  const [completedDreams, setCompletedDreams] = useState([])
 
   //Fetching all Dreams
   useEffect(() => {
    fetch("/dreams")
    .then((r) => r.json())
    .then(setDreams)
+ }, [])
+
+ useEffect(() => {
+   fetch("/completeddreams")
+   .then((r) => r.json())
+   .then(setCompletedDreams)
  }, [])
   
   //Auto-login
@@ -28,15 +35,16 @@ function App() {
 
   if (!user) return <Login setUser={setUser} />
 
-  // const dreamObj = user.dreams.filter(dream => dream.status === false).map(filteredDream =>
-  //   <Memories 
-  //     dream={filteredDream}
-  //     setUser={setUser}
-  //     user={user}
-  //     dreams={dreams}
-  //     />
-  //   )
-  console.log(user.lists)
+  const dreamObj = completedDreams.map(filteredDream =>
+    <Memories 
+      dream={filteredDream}
+      setUser={setUser}
+      user={user}
+      dreams={dreams}
+      />
+    )
+  // console.log(completedDreams)
+
 
   return (
     <div className="main">
@@ -69,12 +77,7 @@ function App() {
         </Route>
 
         <Route exact path="/memories">
-            <Memories 
-      // dream={filteredDream}
-      setUser={setUser}
-      user={user}
-      dreams={dreams}
-      />
+            {dreamObj}
         </Route>
 
         <Route exact path="/profile">

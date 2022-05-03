@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#logout"
   patch "/sendlist/:id", to: "lists#email_list"
+  get "/completeddreams", to: "dreams#show_completed"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

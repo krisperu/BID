@@ -24,8 +24,9 @@ class DreamsController < ApplicationController
         head :no_content
     end
 
-    def show_complete
-        
+    def show_completed
+        completed = user_id.dreams.completed_dreams
+        render json: completed
     end
 
     private

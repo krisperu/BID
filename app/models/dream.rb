@@ -3,7 +3,7 @@ class Dream < ApplicationRecord
   has_many :details, dependent: :destroy
   has_many :memories, dependent: :destroy
 
-  scope :completed_dream, -> {where(status: true)}
+  scope :completed_dreams, -> {where(status: true)}
 
   validates :dream, presence: true, uniqueness: true
 end

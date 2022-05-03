@@ -2,16 +2,17 @@ import React from 'react'
 import NavBar from './NavBar'
 import CreateMemoryFrom from './CreateMemoryFrom'
 
-function Memories({ setUser, user, dreams }) {
-  // const memoryObj = user.memories.filter(memory => memory.)
-  console.log(dreams[3].memories)
+function Memories({ setUser, user, dreams, dream }) {
 
   return (
     <div>
       <NavBar 
       setUser={setUser} 
       />
-      Memories
+      <li>
+        {dream.dream}
+      </li>
+      
       <CreateMemoryFrom />
     </div>
   )
