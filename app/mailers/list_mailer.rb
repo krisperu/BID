@@ -6,7 +6,7 @@ class ListMailer < ApplicationMailer
         # @user = params[:user]
         @url = 'https://beforeidieapp.herokuapp.com/'
         mail(
-            to: "to@example.org", 
+            to: "krissy_hollister3@yahoo.com", 
             subject: "Test email"
         )
     end

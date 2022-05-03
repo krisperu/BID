@@ -29,6 +29,10 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
   const dream = list.dreams.map((dream) => 
   <Dream key={dream.id} dream={dream} details={details} setDetails={setDetails}/>
   )
+
+  function handleSendClick(){
+    
+  }
   // console.log(list)
   
 
