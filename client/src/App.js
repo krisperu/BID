@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [dreams, setDreams] = useState([])
   const [completedDreams, setCompletedDreams] = useState([])
-  const [memories, setMemories] = useState([])
+  // const [memories, setMemories] = useState([])
   const [showCreateMemoryForm, setShowCreateMemoryForm] = useState(false)
 
   //Fetching all Dreams
@@ -21,12 +21,12 @@ function App() {
    .then(setDreams)
  }, [])
 
- //Fetch all Memories
- useEffect(() => {
-   fetch("/memories")
-   .then((r) => r.json())
-   .then(setMemories)
- }, [])
+//  //Fetch all Memories
+//  useEffect(() => {
+//    fetch("/memories")
+//    .then((r) => r.json())
+//    .then(setMemories)
+//  }, [])
  
  //Fetch Completed Dreams
  useEffect(() => {
