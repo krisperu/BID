@@ -5,11 +5,13 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Memories from './components/Memories'
 import Profile from './components/Profile'
+import CreateMemoryForm from './components/CreateMemoryForm'
 
 function App() {
   const [user, setUser] = useState(null)
   const [dreams, setDreams] = useState([])
   const [completedDreams, setCompletedDreams] = useState([])
+  const [showCreateMemoryForm, setShowCreateMemoryForm] = useState(false)
 
   //Fetching all Dreams
   useEffect(() => {
@@ -35,7 +37,7 @@ function App() {
 
   if (!user) return <Login setUser={setUser} />
 
-  const dreamObj = completedDreams.map(filteredDream =>
+  const dreamObj = completedDreams?.map(filteredDream =>
     <Memories 
       dream={filteredDream}
       setUser={setUser}
@@ -43,8 +45,10 @@ function App() {
       dreams={dreams}
       />
     )
-  // console.log(completedDreams)
 
+    function handleCreateMemoryForm(showCreateMemoryForm) {
+      setShowCreateMemoryForm(!showCreateMemoryForm)
+    }
 
   return (
     <div className="main">
@@ -78,6 +82,10 @@ function App() {
 
         <Route exact path="/memories">
             {dreamObj}
+            <button onClick={() => handleCreateMemoryForm(showCreateMemoryForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add Memory</button>
+            <br></br>
+            {showCreateMemoryForm&& <CreateMemoryForm />}
+            <br></br>
         </Route>
 
         <Route exact path="/profile">

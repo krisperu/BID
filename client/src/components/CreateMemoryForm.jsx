@@ -1,9 +1,9 @@
 import React from 'react'
 
-function CreateMemoryFrom() {
+function CreateMemoryForm() {
   return (
     <div>CreateMemoryFrom</div>
   )
 }
 
-export default CreateMemoryFrom
+export default CreateMemoryForm

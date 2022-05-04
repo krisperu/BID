@@ -181,3 +181,9 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+/* Memory Page */
+.memory_obj {
+  padding: 20px;
+  background-color: #F1E3D3;
+}
