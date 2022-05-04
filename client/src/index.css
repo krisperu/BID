@@ -187,3 +187,17 @@ h1 {
   padding: 20px;
   background-color: #F1E3D3;
 }
+
+.vertical-img {
+  max-width: 400px;
+  max-height: 500px;
+}
+
+.horizontal-img {
+  max-width: 350px;
+  max-height: 200px;
+}
+
+.teddy {
+  background-color: #ffffff;
+}

@@ -132,33 +132,33 @@ Detail.create(
 
 puts "🌱 Seeding Memories..."
 Memory.create(
-    title: 'Test 1',
-    desc: 'Test 1',
-    img_one: 'Test Img 1',
-    img_two: 'Test Img 2',
-    img_three: 'Test Img 3',
+    title: 'Memory 1',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    img_one: 'https://picsum.photos/200/300',
+    img_two: 'https://picsum.photos/150/300',
+    img_three: 'https://picsum.photos/175/300',
     rating: rand(1..5),
     user_id: User.ids.sample,
     dream_id: Dream.ids.sample
 )
 
 Memory.create(
-    title: 'Test 2',
-    desc: 'Test 2',
-    img_one: 'Test Img 1',
-    img_two: 'Test Img 2',
-    img_three: 'Test Img 3',
+    title: 'Memory 2',
+    desc: 'Amet consectetur adipiscing elit ut aliquam. Nunc vel risus commodo viverra maecenas accumsan lacus vel. Eget velit aliquet sagittis id consectetur. Vitae justo eget magna fermentum iaculis eu non diam. Bibendum ut tristique et egestas quis. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Rhoncus est pellentesque elit ullamcorper dignissim. Lacus vel facilisis volutpat est velit. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Pretium lectus quam id leo in vitae turpis massa. Ultricies tristique nulla aliquet enim tortor. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Cursus eget nunc scelerisque viverra mauris in aliquam.',
+    img_one: 'https://picsum.photos/400/500',
+    img_two: 'https://picsum.photos/175/300',
+    img_three: 'https://picsum.photos/190/325',
     rating: rand(1..5),
     user_id: User.ids.sample,
     dream_id: Dream.ids.sample
 )
 
 Memory.create(
-    title: 'Test 3',
-    desc: 'Test 3',
-    img_one: 'Test Img 1',
-    img_two: 'Test Img 2',
-    img_three: 'Test Img 3',
+    title: 'Memory 3',
+    desc: 'Urna porttitor rhoncus dolor purus non enim. Convallis convallis tellus id interdum velit laoreet id donec. Sit amet venenatis urna cursus eget nunc. Quam elementum pulvinar etiam non quam lacus suspendisse. Massa tincidunt dui ut ornare lectus sit. Nisl tincidunt eget nullam non. Ac felis donec et odio pellentesque diam volutpat. At tellus at urna condimentum mattis pellentesque id. Placerat duis ultricies lacus sed turpis tincidunt id aliquet. At imperdiet dui accumsan sit. Pharetra vel turpis nunc eget. Sagittis id consectetur purus ut faucibus pulvinar elementum. Massa eget egestas purus viverra accumsan in nisl nisi. Tristique risus nec feugiat in fermentum posuere urna. Tristique senectus et netus et. Faucibus et molestie ac feugiat sed.',
+    img_one: 'https://picsum.photos/450/550',
+    img_two: 'https://picsum.photos/250/400',
+    img_three: 'https://picsum.photos/200/350',
     rating: rand(1..5),
     user_id: User.ids.sample,
     dream_id: Dream.ids.sample

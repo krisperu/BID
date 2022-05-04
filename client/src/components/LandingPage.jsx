@@ -26,12 +26,11 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
     .then(setDetails)
   }, [])
 
-  // console.log(details)
   function handleUpdateListTitle(updatedListTitle) {
     setLists(updatedListTitle)
   }
   
-  const listObj = lists.map((list) => 
+  const listObj = user.lists.map((list) => 
   <ListCard 
   key={list.id} 
   list={list} lists={lists} 
@@ -44,6 +43,7 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
   />
   )
 
+  // console.log(user.lists)
 
   return (
     <div>

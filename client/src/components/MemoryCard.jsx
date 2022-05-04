@@ -2,24 +2,35 @@ import React from 'react'
 
 function MemoryCard({ memory }) {
   return (
-    <div className="ui divided three column grid">
-    <div className="stretched row">
-      <div className="column">
-        <div className="ui segment">Vertical Photo: 
-        {/* <img className="horizontal-img" src="https://picsum.photos/350/200" alt={memory.img_one} /> */}
+    <div>
+        <div className="ui divided two column grid">
+            <div className="stretched row">
+            <div className="column">
+                <div className="ui segment">
+                    <img className="vertical-img" src={memory.img_one} alt={memory.id} />
+                </div>
+            </div>
+            <div className="column">
+                <div className="ui segment"> 
+                    <img className="horizontal-img" src={memory.img_two} alt={memory.id}/>
+                </div>
+                <div className="ui segment">
+                    <img className="horizontal-img" src={memory.img_two} alt={memory.id}/>
+                </div>
+            </div>
         </div>
-      </div>
-      <div className="column">
-        <div className="ui segment">Horizontal Photo 1: {memory.img_two}</div>
-        <div className="ui segment">Horizontal Photo 2: {memory.img_three}</div>
-      </div>
-      <div className="column">
-        <h2 className="ui segment">Title? {memory.title}</h2>
-        <div className="ui segment">Description: {memory.desc}</div>
-        <div className="ui segment">Rating: {memory.rating}</div>
-      </div>
+        </div>
+        <br></br>     
+        <div className="teddy">
+            <h3 className="">{memory.title}</h3>
+            <div className="description">
+                <p>Rating: {memory.rating}</p>
+                <p>Notes: {memory.desc}</p>
+            </div>
+        </div> 
+        <hr className="solid"></hr>
+        <br></br> 
     </div>
-  </div>
   )
 }
 
