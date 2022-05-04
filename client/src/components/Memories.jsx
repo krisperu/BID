@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import NavBar from './NavBar'
-import CreateMemoryFrom from './CreateMemoryForm'
 import MemoryCard from './MemoryCard'
 
 function Memories({ setUser, user, dreams, dream }) {
@@ -20,7 +19,6 @@ function Memories({ setUser, user, dreams, dream }) {
         {memoryObj}
       </div>
       <br></br>
-      {/* <CreateMemoryFrom /> */}
     </div>
   )
 }

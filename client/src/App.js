@@ -11,6 +11,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [dreams, setDreams] = useState([])
   const [completedDreams, setCompletedDreams] = useState([])
+  const [memories, setMemories] = useState([])
   const [showCreateMemoryForm, setShowCreateMemoryForm] = useState(false)
 
   //Fetching all Dreams
@@ -20,6 +21,14 @@ function App() {
    .then(setDreams)
  }, [])
 
+ //Fetch all Memories
+ useEffect(() => {
+   fetch("/memories")
+   .then((r) => r.json())
+   .then(setMemories)
+ }, [])
+ 
+ //Fetch Completed Dreams
  useEffect(() => {
    fetch("/completeddreams")
    .then((r) => r.json())
@@ -37,8 +46,9 @@ function App() {
 
   if (!user) return <Login setUser={setUser} />
 
-  const dreamObj = completedDreams?.map(filteredDream =>
+  const dreamObj = completedDreams.map(filteredDream =>
     <Memories 
+      key={filteredDream.id}
       dream={filteredDream}
       setUser={setUser}
       user={user}
@@ -84,7 +94,7 @@ function App() {
             {dreamObj}
             <button onClick={() => handleCreateMemoryForm(showCreateMemoryForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add Memory</button>
             <br></br>
-            {showCreateMemoryForm&& <CreateMemoryForm />}
+            {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} memories={memories} setMemories={setMemories}/>}
             <br></br>
         </Route>
 
