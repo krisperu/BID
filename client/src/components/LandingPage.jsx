@@ -30,7 +30,7 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
     setLists(updatedListTitle)
   }
   
-  const listObj = user.lists.map((list) => 
+  const listObj = lists.map((list) => 
   <ListCard 
   key={list.id} 
   list={list} lists={lists} 

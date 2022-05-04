@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function CreateMemoryForm({ user, dreams, memories, setMemories }) {
+function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
   const [errors, setErrors] = useState([])
   const [memoryFormData, setMemoryFormData] = useState({
     title: '',
@@ -24,11 +24,19 @@ function CreateMemoryForm({ user, dreams, memories, setMemories }) {
     dream_id: ''
   })
 
-  function onCreateMemory(newMemory) {
-    setMemories([...memories, newMemory])
+  function onCreateMemory(newMem) {
+    const updDreams = dreams.map(cd => {
+      if (cd.id === newMem.dream.id) {
+          return {...cd, memories: [...cd.memories, newMem]}
+      } else {
+          return cd
+      }
+  })
+  setCompletedDreams(updDreams)
   }
 
-  function handleSubmit(){
+  function handleSubmit(e){
+    e.preventDefault()
     setErrors([])
 
     const newMemory = {
@@ -39,7 +47,7 @@ function CreateMemoryForm({ user, dreams, memories, setMemories }) {
       img_three: memoryFormData.img_three,
       rating: memoryFormData.rating,
       user_id: memoryFormData.user_id,
-      dream_id: memoryFormData.dream_id
+      dream_id: parseInt(memoryFormData.dream_id)
     }
 
     fetch(`memories`, {
@@ -140,13 +148,13 @@ function CreateMemoryForm({ user, dreams, memories, setMemories }) {
                   value={memoryFormData.rating}
                   onChange={(e) => handleChange(e)}
                 />
-                <div className="ui star rating" role="radiogroup" tabindex="-1">
+                {/* <div className="ui star rating" role="radiogroup" tabIndex="-1">
                   <i tabIndex="0" aria-checked="false" aria-posinset="1" aria-setsize="5" className="active icon" role="radio"></i>
                   <i tabIndex="0" aria-checked="false" aria-posinset="2" aria-setsize="5" className="active icon" role="radio"></i>
                   <i tabIndex="0" aria-checked="true" aria-posinset="3" aria-setsize="5" className="active icon" role="radio"></i>
                   <i tabIndex="0" aria-checked="false" aria-posinset="4" aria-setsize="5" className="icon" role="radio"></i>
                   <i tabIndex="0" aria-checked="false" aria-posinset="5" aria-setsize="5" className="icon" role="radio"></i>
-                </div>
+                </div> */}
             </div>
         </div>
         <div className="form-row">

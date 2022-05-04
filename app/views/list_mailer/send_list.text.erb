@@ -6,9 +6,11 @@ ________________________________________________________________
 ----------------------------------------------------------------
 
 <%= @sending_list.title %>
-<%= @list_items %>
+<% @list_items.each do |item| %>
+- <%= item %>
+<% end %>
 
 
-To see all lists, just follow this link: <% @url %>
+To see all lists, just follow this link: <%= @url %>
 
 Make your dreams come true!

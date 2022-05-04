@@ -94,7 +94,7 @@ function App() {
             {dreamObj}
             <button onClick={() => handleCreateMemoryForm(showCreateMemoryForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add Memory</button>
             <br></br>
-            {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} memories={memories} setMemories={setMemories}/>}
+            {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} completedDreams={completedDreams} setCompletedDreams={setCompletedDreams}/>}
             <br></br>
         </Route>
 
