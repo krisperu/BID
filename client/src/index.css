@@ -7,6 +7,58 @@ body {
     background-color: #FAF9F6;
   }
   
+  /* Login/Signup Page */
+  .login-form-bar {
+    height: 100%;
+    width: 460px; 
+    position: fixed;
+    z-index: 1; 
+    top: 0; 
+    right: 0;
+    background-color: #F9F6EE;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* img {
+    height: 1100px;
+    width: 100%;
+    position: right;
+  } */
+  
+  .form_padding {
+    padding: 20px;
+  }
+  
+  .login-img {
+    background-image: url(./images/pexels-sunsetoned-7283618.jpg);
+    margin-right: 460px; 
+    padding: 0px 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* display: flex; */
+    color: white;
+    /* justify-content: flex-start; */
+  }
+
+  .bg-text {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  }
+
+  .space {
+    height: 1000px;
+    width: 500px;
+  }
+
   /* Sidebar */
 aside {
     height: 100%;
@@ -24,32 +76,9 @@ aside button {
     position: absolute;
     bottom: 0px;
   }
-
-  /* Login/Signup Page */
-.login_page {
-    height: 100%;
-    width: 460px; 
-    position: fixed;
-    z-index: 1; 
-    top: 0; 
-    right: 0;
-    background-color: #F9F6EE;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-img {
-  height: 1100px;
-  width: 100%;
-  position: right;
-}
-
-.form_padding {
-  padding: 20px;
-}
-
-/* The navigation menu links */
-.ui.color.vertical.menu{
+  
+  /* The navigation menu links */
+  .ui.color.vertical.menu{
   background-color: #F9F6EE;
   color: black;
 }
@@ -65,9 +94,9 @@ img {
     padding: 0px 10px;
   }
 
-.background {
-  justify-content: center;
-}
+  .background {
+    justify-content: center;
+  }
 
   /* Logo */
 h1 {
@@ -143,7 +172,7 @@ h1 {
   background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked, add a pink background */
 .container input:checked ~ .checkmark {
   background-color: #F1E3D3;
 }
@@ -198,6 +227,6 @@ h1 {
   max-height: 200px;
 }
 
-.teddy {
+.mem-desc {
   background-color: #ffffff;
 }

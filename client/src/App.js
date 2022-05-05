@@ -46,7 +46,7 @@ function App() {
 
   if (!user) return <Login setUser={setUser} />
 
-  const dreamObj = completedDreams.map(filteredDream =>
+  const dreamObj = completedDreams?.map(filteredDream =>
     <Memories 
       key={filteredDream.id}
       dream={filteredDream}

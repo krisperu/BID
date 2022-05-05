@@ -31,11 +31,39 @@ function Login({ setUser, user }) {
     }
 
   return (
-    <div>
-      <div>
-        <img src="https://images.pexels.com/photos/7283618/pexels-photo-7283618.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Login/Signup Page"/>
+    <div className="login-page">
+      <div className="login-img">
+        <div class="ui grid">
+          <div class="left floated five wide column">
+            <div className="bg-text"></div>
+          </div>
+          <div class="left floated five wide column">
+            <div className="bg-text"><b>App Title Maybe</b></div>
+          </div>
+          <div class="right floated five wide column">
+          <div className="bg-text"></div>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="left floated five wide column">
+            <div className="bg-text">Directions part 1</div>
+          </div>
+          <div class="right floated five wide column">
+          <div className="bg-text"></div>
+          </div>
+        </div>
+        <div class="ui grid">
+          {/* <div class="left floated five wide column">
+            <div className="bg-text"></div>
+          </div> */}
+          <div class="right floated five wide column">
+          <div className="bg-text">Directions part 2</div>
+          </div>
+        </div>
+        {/* <div className="bg-text">TEXT</div> */}
+        <div  className="space"></div>
       </div>
-      <div className="login_page">
+      <div className="login-form-bar">
         <div className="logo">
           <h1>Before I Die</h1>
           A Bucket List App
@@ -74,6 +102,26 @@ function Login({ setUser, user }) {
         </div>
         
       </div>
+      {/* <div class="ui vertically divided grid">
+        <div class="two column row"><div class="column">
+          <img src="/images/wireframe/paragraph.png" class="ui image"/>
+        </div>
+        <div class="column">
+          <img src="/images/wireframe/paragraph.png" class="ui image"/>
+        </div>
+      </div>
+      <div class="three column row">
+        <div class="column">
+          <img src="/images/wireframe/paragraph.png" class="ui image"/>
+        </div>
+        <div class="column">
+          <img src="/images/wireframe/paragraph.png" class="ui image"/>
+        </div>
+        <div class="column">
+          <img src="/images/wireframe/paragraph.png" class="ui image"/>
+        </div>
+      </div>
+      </div> */}
     </div>
   )
 }

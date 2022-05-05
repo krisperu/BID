@@ -21,7 +21,7 @@ function MemoryCard({ memory }) {
         </div>
         </div>
         <br></br>     
-        <div className="teddy">
+        <div className="mem-desc">
             <h3 className="">{memory.title}</h3>
             <div className="description">
                 <p>Rating: {memory.rating}</p>

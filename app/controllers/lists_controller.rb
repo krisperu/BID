@@ -1,8 +1,9 @@
 class ListsController < ApplicationController
     before_action :find_list, only: [:show, :update, :destroy]
+    before_action :user_id, only: :index
 
     def index
-        render json: List.all, include: ['dreams', 'dreams.details']
+        render json: user_id.lists.all, include: ['dreams', 'dreams.details']
     end
 
     def show
