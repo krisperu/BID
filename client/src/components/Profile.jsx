@@ -1,12 +1,9 @@
 import React from 'react'
-import NavBar from './NavBar'
 
-function Profile({ setUser, user }) {
+
+function Profile({  user }) {
   return (
     <div>
-      <NavBar
-        setUser={setUser} 
-      />
       <br></br>
       <h2>My Profile:</h2>
       <div className="center">

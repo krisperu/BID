@@ -1,8 +1,7 @@
 import React from 'react'
-import NavBar from './NavBar'
 import MemoryCard from './MemoryCard'
 
-function Memories({ setUser, user, dreams, dream,  }) {
+function Memories({ dream }) {
 
 
   const memoryObj = dream.memories?.map((memory) =>
@@ -11,9 +10,6 @@ function Memories({ setUser, user, dreams, dream,  }) {
 
   return (
     <div>
-      <NavBar 
-      setUser={setUser} 
-      />
       <br></br>
       <div className="memory_obj">
         {memoryObj}

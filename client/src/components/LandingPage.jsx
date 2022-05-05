@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import NavBar from './NavBar'
 import CreateListForm from './CreateListForm'
 import ListCard from './ListCard'
 
-function LandingPage({ setUser, user, dreams, setDreams }) {
+function LandingPage({ user }) {
   const [lists, setLists] = useState([])
   const [details, setDetails] = useState([])
+  const [dreams, setDreams] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
 
   function handleCreateForm(showCreateForm) {
     setShowCreateForm(!showCreateForm)
   }
+
+   //Fetching all Dreams
+   useEffect(() => {
+    fetch("/dreams")
+    .then((r) => r.json())
+    .then(setDreams)
+  }, [])
 
   //Fetching all Lists
   useEffect(() => {
@@ -43,13 +50,8 @@ function LandingPage({ setUser, user, dreams, setDreams }) {
   />
   )
 
-  // console.log(user.lists)
-
   return (
     <div>
-        <NavBar 
-          setUser={setUser} 
-        />
         <br></br>
         <div>
           <button onClick={() => handleCreateForm(showCreateForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add New List</button>
