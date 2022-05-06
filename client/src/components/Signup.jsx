@@ -38,9 +38,9 @@ function Signup({ user, setUser }) {
       email: formData.email,
       password: formData.password,
       passwordConfirmation: formData.passwordConfirmation,
-      name: "B I D User",
+      name: formData.name ? formData.name :"B I D User",
       bio: formData.bio,
-      image: "https://images.pexels.com/photos/5489194/pexels-photo-5489194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      image: formData.image ? formData.image : "https://picsum.photos/500/750"
     }
 
     fetch(`/signup`, {

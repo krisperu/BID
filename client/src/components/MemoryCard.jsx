@@ -14,7 +14,7 @@ function emojiRating(rating) {
             return "♥︎♥︎♥︎♥︎♥︎"
     }
 }
-function MemoryCard({ memory, imgOne="https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", dream, rating }) {
+function MemoryCard({ memory, dream, rating }) {
     const emojis = emojiRating(rating)
  
 return (
@@ -24,7 +24,7 @@ return (
         <div className="stretched row">
         <div className="column">
             <div className="ui segment">
-                <img className="ui fluid image" src={imgOne} alt={memory.id} />
+                <img className="ui fluid image" src={memory.img_one} alt={memory.id} />
             </div>
         </div>
         <div className="column">

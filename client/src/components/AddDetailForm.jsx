@@ -18,7 +18,8 @@ function AddDetailForm({ dream, details, setDetails }) {
     setDetails([...details, newDetail])
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault()
     setErrors([])
 
     const newDetail ={

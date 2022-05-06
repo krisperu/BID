@@ -2,21 +2,10 @@ import React, { useState } from 'react'
 import Detail from './Detail'
 import AddDetailForm from './AddDetailForm'
 
-// function bool(done){
-//   switch (done) {
-//     case true:
-//       return "true";
-//     default:
-//       return "false";
-//   }
-// }
-
-
 function Dream({ dream, details, setDetails, done }) {
     const [showDetail, setShowDetail] = useState(false)
     const [checked, setChecked] = useState(done)
     const [showAddDetail, setShowAddDetail] = useState(false)
-    // const thingy = bool(done)
 
   function handleShowDetail(e, showDetail) {
     e.stopPropagation()

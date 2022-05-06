@@ -38,13 +38,13 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
   function handleSubmit(e){
     e.preventDefault()
     setErrors([])
-
+    
     const newMemory = {
       title: memoryFormData.title,
       desc: memoryFormData.desc,
-      img_one: memoryFormData.imgOne ? memoryFormData.imgOne : "https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      img_two: memoryFormData.imgTwo,
-      img_three: memoryFormData.imgThree,
+      img_one: memoryFormData.imgOne ? memoryFormData.imgOne : "https://picsum.photos/400/500",
+      img_two: memoryFormData.imgTwo ? memoryFormData.imgTwo : "https://picsum.photos/300/175",
+      img_three: memoryFormData.imgThree ? memoryFormData.imgThree : "https://picsum.photos/325/190",
       rating: memoryFormData.rating,
       user_id: memoryFormData.user_id,
       dream_id: parseInt(memoryFormData.dream_id)

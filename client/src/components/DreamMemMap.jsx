@@ -35,12 +35,12 @@ function handleCreateMemoryForm(showCreateMemoryForm) {
 
 return (
 <div>
-    {dreamObj}
     <br></br>
     <button onClick={() => handleCreateMemoryForm(showCreateMemoryForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add Memory</button>
     <br></br>
     {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} setCompletedDreams={setCompletedDreams}/>}
     <br></br>
+    {dreamObj}
 </div>
 )
 }
