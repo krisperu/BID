@@ -13,7 +13,7 @@ function LandingPage({ user }) {
   }
 
    //Fetching all Dreams
-   useEffect(() => {
+  useEffect(() => {
     fetch("/dreams")
     .then((r) => r.json())
     .then(setDreams)

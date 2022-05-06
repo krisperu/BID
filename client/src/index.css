@@ -20,11 +20,10 @@ body {
     padding-top: 20px;
   }
   
-  /* img {
-    height: 1100px;
-    width: 100%;
-    position: right;
-  } */
+  hr {
+    background-color:  rgb(176, 176, 176, 0.3);
+    height: 2px;
+  }
   
   .form_padding {
     padding: 20px;
@@ -43,16 +42,27 @@ body {
   }
 
   .bg-text {
-  position: absolute;
-  top: 20px;
-  left: 0px;
-  right: 0px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 20px;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  right: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  padding: 20px;
+  font-size: 14px;
   }
+
+  .bg-text-2 {
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    right: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+    padding: 20px;
+    font-size: 16px;
+    /* text-align: left; */
+    }
 
   .space {
     height: 1000px;
@@ -63,7 +73,7 @@ body {
 aside {
     height: 100%;
     width: 160px; 
-    position: absolute;
+    position: fixed;
     z-index: 1; 
     top: 0; 
     left: 0;
@@ -218,7 +228,7 @@ h1 {
 }
 
 .vertical-img {
-  max-width: 400px;
+  max-width: 300px;
   max-height: 500px;
 }
 

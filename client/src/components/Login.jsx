@@ -33,39 +33,37 @@ function Login({ setUser, user }) {
   return (
     <div className="login-page">
       <div className="login-img">
-        <div class="ui grid">
-          <div class="left floated five wide column">
-            <div className="bg-text"></div>
+          <div className="center five wide column">
+            <div></div>
           </div>
-          <div class="left floated five wide column">
-            <div className="bg-text"><b>App Title Maybe</b></div>
+          <div className="center five wide column">
+            <div className="bg-text">
+              <h1><b>Before I Die</b></h1>
+              <div>A Bucket List App</div>
+              <hr className="solid"></hr>
+              <div>Making your dreams come true, one list at a time.</div>
+            </div>
+              <br></br>
+            <div className="bg-text-2">
+              <div>Create a Bucket List</div>
+              <br></br>
+              <div>Add Dreams to the List</div>
+              <br></br>
+              <div>Add Details to your Dream</div>
+              <br></br>
+              <div>Create Memories  after Completing Dreams</div>
+            </div>
           </div>
-          <div class="right floated five wide column">
-          <div className="bg-text"></div>
-          </div>
-        </div>
-        <div class="ui grid">
-          <div class="left floated five wide column">
-            <div className="bg-text">Directions part 1</div>
-          </div>
-          <div class="right floated five wide column">
-          <div className="bg-text"></div>
-          </div>
-        </div>
-        <div class="ui grid">
-          {/* <div class="left floated five wide column">
-            <div className="bg-text"></div>
-          </div> */}
-          <div class="right floated five wide column">
-          <div className="bg-text">Directions part 2</div>
-          </div>
-        </div>
-        {/* <div className="bg-text">TEXT</div> */}
+          <div className="right floated five wide column">
+          <div></div>
         <div  className="space"></div>
-      </div>
+          </div>
+        </div>
+    
+      {/* Login SideBar */}
       <div className="login-form-bar">
         <div className="logo">
-          <h1>Before I Die</h1>
+          <h1>B I D</h1>
           A Bucket List App
         </div>
         <div className="form_padding">
@@ -100,28 +98,7 @@ function Login({ setUser, user }) {
         <button onClick={()=> handleSignup(showSignup)} className="ui basic button">Don't have an accout? Sign Up</button>
         {showSignup &&<Signup user={user} setUser={setUser}/>}
         </div>
-        
       </div>
-      {/* <div class="ui vertically divided grid">
-        <div class="two column row"><div class="column">
-          <img src="/images/wireframe/paragraph.png" class="ui image"/>
-        </div>
-        <div class="column">
-          <img src="/images/wireframe/paragraph.png" class="ui image"/>
-        </div>
-      </div>
-      <div class="three column row">
-        <div class="column">
-          <img src="/images/wireframe/paragraph.png" class="ui image"/>
-        </div>
-        <div class="column">
-          <img src="/images/wireframe/paragraph.png" class="ui image"/>
-        </div>
-        <div class="column">
-          <img src="/images/wireframe/paragraph.png" class="ui image"/>
-        </div>
-      </div>
-      </div> */}
     </div>
   )
 }

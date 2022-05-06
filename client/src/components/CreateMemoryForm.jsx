@@ -5,9 +5,9 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
   const [memoryFormData, setMemoryFormData] = useState({
     title: '',
     desc: '',
-    img_one: '',
-    img_two: '',
-    img_three: '',
+    imgOne: '',
+    imgTwo: '',
+    imgThree: '',
     rating: '',
     user_id: user.id,
     dream_id: '',
@@ -16,9 +16,9 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
   const initialFormState = ({
     title: '',
     desc: '',
-    img_one: '',
-    img_two: '',
-    img_three: '',
+    imgOne: '',
+    imgTwo: '',
+    imgThree: '',
     rating: '',
     user_id: user.id,
     dream_id: ''
@@ -27,9 +27,9 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
   function onCreateMemory(newMem) {
     const updDreams = dreams.map(cd => {
       if (cd.id === newMem.dream.id) {
-          return {...cd, memories: [...cd.memories, newMem]}
+        return {...cd, memories: [...cd.memories, newMem]}
       } else {
-          return cd
+        return cd
       }
   })
   setCompletedDreams(updDreams)
@@ -42,9 +42,9 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
     const newMemory = {
       title: memoryFormData.title,
       desc: memoryFormData.desc,
-      img_one: memoryFormData.img_one,
-      img_two: memoryFormData.img_two,
-      img_three: memoryFormData.img_three,
+      img_one: memoryFormData.imgOne,
+      img_two: memoryFormData.imgTwo,
+      img_three: memoryFormData.imgThree,
       rating: memoryFormData.rating,
       user_id: memoryFormData.user_id,
       dream_id: parseInt(memoryFormData.dream_id)
@@ -106,10 +106,11 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
             <div className="form">
                 <label>Vertical Image</label>
                 <input
-                  name="img_one"
+                  name="imgOne"
                   type="text"
                   id={FormData.img_one}
-                  value={memoryFormData.img_one}
+                  defaultValue="https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  value={memoryFormData.imgOne}
                   onChange={(e) => handleChange(e)}
                 />
             </div>
@@ -118,10 +119,10 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
             <div className="form">
                 <label>First Horizontal Image</label>
                 <input
-                  name="img_two"
+                  name="imgTwo"
                   type="text"
-                  id={FormData.img_two}
-                  value={memoryFormData.img_two}
+                  id={FormData.imgTwo}
+                  value={memoryFormData.imgTwo}
                   onChange={(e) => handleChange(e)}
                 />
             </div>
@@ -130,10 +131,10 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
             <div className="form">
                 <label>Second Horizontal Image</label>
                 <input
-                  name="img_three"
+                  name="imgThree"
                   type="text"
-                  id={FormData.img_three}
-                  value={memoryFormData.img_three}
+                  id={FormData.imgThree}
+                  value={memoryFormData.imgThree}
                   onChange={(e) => handleChange(e)}
                 />
             </div>
@@ -185,4 +186,6 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
 }
 
 export default CreateMemoryForm
+
+
 

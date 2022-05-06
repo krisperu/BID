@@ -68,7 +68,7 @@ function AddDetailForm({ dream, details, setDetails }) {
             </div>
         </div>
         <div className="form-row">
-            <div className="form">
+            {/* <div className="form">
                 <label>Image</label>
                 <input
                   name="image"
@@ -77,7 +77,7 @@ function AddDetailForm({ dream, details, setDetails }) {
                   value={detailFormData.image}
                   onChange={(e) => handleChange(e)}
                 />
-            </div>
+            </div> */}
             {errors.map((error) => (
               <ul key={error} className="errors">・ {error}</ul>
             ))}

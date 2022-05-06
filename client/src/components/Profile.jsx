@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function Profile({  user }) {
+function Profile({ user }) {
   return (
     <div>
       <br></br>
@@ -14,10 +14,11 @@ function Profile({  user }) {
         <div className="content">
           <div className="header">Name: {user.name}</div>
           <div className="meta">Email: {user.email}</div>
+          <div className="meta">Username: {user.username}</div>
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
-          <div>Add Edit Button Here</div>
+          <button className="ui submit grey basic button center">Add Edit Button Here</button>
         </div>
       </div>
       </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom"
 import LandingPage from './LandingPage'
-import Signup from './Signup'
 import Login from './Login'
 import Profile from './Profile'
 import DreamMemMap from './DreamMemMap'
@@ -9,15 +8,15 @@ import NavBar from './NavBar'
 
 function App() {
   const [user, setUser] = useState(null)
-   
+  
   //Auto-login
   useEffect(() => {
     fetch("/authorize").then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
-       }
-     });
-   }, [])
+      }
+    });
+  }, [])
 
   if (!user) return <Login setUser={setUser}/>
 
@@ -35,11 +34,11 @@ function App() {
           </Route>
 
           <Route exact path="/memories">
-            <DreamMemMap usere={user}/>
+            <DreamMemMap user={user}/>
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={user}/>
+            <Profile user={user} pic={user.image} name={user.name}/>
           </Route>
         </Switch>
         <div className='footer'>

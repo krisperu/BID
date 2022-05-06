@@ -6,19 +6,21 @@ function Signup({ user, setUser }) {
     username: "",
     email: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
+    name: "B I D User",
+    bio: "",
+    image: ""
   })
 
   const initialFormState = {
     username: "",
     email: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
+    name: "B I D User",
+    bio: "",
+    image: ""
   };
-
-  // function onCreateAccount(newUser) {
-  //   setUser([...user, newUser])
-  // }
 
   function handleChange(e) {
     setFormData({
@@ -35,7 +37,10 @@ function Signup({ user, setUser }) {
       username: formData.username,
       email: formData.email,
       password: formData.password,
-      passwordConfirmation: formData.passwordConfirmation
+      passwordConfirmation: formData.passwordConfirmation,
+      name: "B I D User",
+      bio: formData.bio,
+      image: "https://images.pexels.com/photos/5489194/pexels-photo-5489194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     }
 
     fetch(`/signup`, {
