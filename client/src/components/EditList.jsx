@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditList({ list, onUpdateListTitle }) {
+function EditList({ list }) {
     let history = useHistory();
     const [listFormData, setListFormData] = useState({title: list.title})
   

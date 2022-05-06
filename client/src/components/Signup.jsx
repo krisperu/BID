@@ -7,7 +7,7 @@ function Signup({ user, setUser }) {
     email: "",
     password: "",
     passwordConfirmation: "",
-    name: "B I D User",
+    name: "",
     bio: "",
     image: ""
   })

@@ -10,7 +10,6 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
   function handleEditForm(e, showEditForm){
     e.stopPropagation()
     setShowEditForm(!showEditForm)
-    
   }
 
   function handleAddDreamForm(e, showAddDreamForm){

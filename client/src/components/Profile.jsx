@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import EditProfile from './EditProfile'
 
+function Profile({ user, setUser }) {
+  const [showEditForm, setShowEditForm] = useState(false)
 
-function Profile({ user }) {
+  function handleEditForm(showEditForm) {
+    setShowEditForm(!showEditForm)
+  }
   return (
     <div>
       <br></br>
@@ -18,8 +23,9 @@ function Profile({ user }) {
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
-          <button className="ui submit grey basic button center">Add Edit Button Here</button>
+          <button className="ui submit grey basic button center" onClick={() => handleEditForm(showEditForm)}>Edit Profile</button>
         </div>
+        {showEditForm &&<EditProfile user={user} setUser={setUser}/>}
       </div>
       </div>
       <br></br>

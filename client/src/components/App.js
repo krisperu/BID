@@ -38,7 +38,7 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={user} pic={user.image} name={user.name}/>
+            <Profile user={user} setUser={setUser}/>
           </Route>
         </Switch>
         <div className='footer'>
