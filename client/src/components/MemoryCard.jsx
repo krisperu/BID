@@ -1,17 +1,6 @@
 import React from 'react'
 
 function emojiRating(rating) {
-    // if (rating = 1 ) {
-    //     return "♥︎"
-    // } else if (rating = 2) {
-    //     return "♥︎♥︎"
-    // } else if (rating = 3) {
-    //     return "♥︎♥︎♥︎"
-    // } else if (rating = 4) {
-    //     return "♥︎♥︎♥︎♥︎"
-    // } else {
-    //     return "♥︎♥︎♥︎♥︎♥︎"
-    // }
     switch (rating) {
         case 1:
             return "♥︎";
@@ -21,12 +10,13 @@ function emojiRating(rating) {
             return "♥︎♥︎♥︎"
         case 4:
             return "♥︎♥︎♥︎♥︎";
-        case 5:
+        default:
             return "♥︎♥︎♥︎♥︎♥︎"
     }
 }
 function MemoryCard({ memory, imgOne="https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", dream, rating }) {
     const emojis = emojiRating(rating)
+ 
 return (
 <div className="memory_obj">
     <h2>{dream.dream}</h2>
@@ -51,7 +41,7 @@ return (
     <div className="mem-desc">
         <h3 className="">{memory.title}</h3>
         <div className="description">
-            <p>Rating: <div className="emojis">{emojis}</div></p>
+            <div>Rating: <div className="emojis">{emojis}</div></div>
             <p>Notes: {memory.desc}</p>
         </div>
     </div> 

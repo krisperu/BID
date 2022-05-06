@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <NavBar setUser={setUser}/>
+      <NavBar user={user} setUser={setUser}/>
       <div className="main">
         <div className="logo">
         <h1>Before I Die</h1>

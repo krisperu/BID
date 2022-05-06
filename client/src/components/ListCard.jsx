@@ -10,6 +10,7 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
   function handleEditForm(e, showEditForm){
     e.stopPropagation()
     setShowEditForm(!showEditForm)
+    
   }
 
   function handleAddDreamForm(e, showAddDreamForm){
@@ -27,7 +28,7 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
     });
   }
   const dream = list.dreams.map((dream) => 
-  <Dream key={dream.id} dream={dream} details={details} setDetails={setDetails}/>
+  <Dream key={dream.id} dream={dream} details={details} setDetails={setDetails} done={dream.status}/>
   )
 
   function handleSendClick(){
@@ -43,9 +44,8 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
       body: JSON.stringify(updatedList)
     })
     .then(r => r.json())
+    alert('Email sent 💌');
   }
-  // console.log(list)
-  
 
   return (
     <div key={list.id} className="card">

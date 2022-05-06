@@ -9,7 +9,7 @@ class ListMailer < ApplicationMailer
         mail(
             from: "Before I Die | A Bucket List App",
             to: @user.email, 
-            subject: "You #{@sending_list.title} Bucket List "
+            subject: "Your #{@sending_list.title} Bucket List "
         )
     end
 end

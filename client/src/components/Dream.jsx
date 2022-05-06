@@ -2,11 +2,22 @@ import React, { useState } from 'react'
 import Detail from './Detail'
 import AddDetailForm from './AddDetailForm'
 
-function Dream({ dream, details, setDetails }) {
+function bool(done){
+  switch (done) {
+    case true:
+      return "true";
+    default:
+      return "false";
+  }
+}
+
+
+function Dream({ dream, details, setDetails, done }) {
     const [showDetail, setShowDetail] = useState(false)
     const [checked, setChecked] = useState(false)
     const [showAddDetail, setShowAddDetail] = useState(false)
-    
+    const thingy = bool(done)
+
   function handleShowDetail(e, showDetail) {
     e.stopPropagation()
     setShowDetail(!showDetail)
@@ -38,8 +49,8 @@ function Dream({ dream, details, setDetails }) {
     <div>
       <button className="ui mini right floated circular basic icon button" onClick={(e) => handleShowDetail(e, showDetail)}><i aria-hidden="true" className="angle down icon"></i></button>
       <form className="dreamTitle">
-        <label className="container">{dream.dream}
-        <input type="checkbox" className={dream.status} onChange={handleCheckmark} />
+        <label className={thingy}>{dream.dream}
+        <input type="checkbox" onChange={handleCheckmark} />
         <span className="checkmark"></span>
       </label>
       </form>

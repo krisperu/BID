@@ -5,5 +5,5 @@ class Dream < ApplicationRecord
 
   scope :completed_dreams, -> {where(status: true)}
 
-  validates :dream, presence: true, uniqueness: true
+  validates :dream, presence: true
 end

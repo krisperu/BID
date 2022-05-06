@@ -94,6 +94,10 @@ aside button {
 .sidenav a:hover {
   color: #f1f1f1;
 }
+
+.nav-prof{
+  padding: 7px;
+}
   
   /* Page Body */
 .main {
@@ -143,8 +147,8 @@ h1 {
     bottom: 0px;
   }
 
-  /* Checkbox */
-.container {
+  /* Checkbox false */
+.false {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -156,7 +160,7 @@ h1 {
   user-select: none;
 }
 
-.container input {
+.false input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -175,12 +179,12 @@ h1 {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.false:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a pink background */
-.container input:checked ~ .checkmark {
+.false input:checked ~ .checkmark {
   background-color: #F1E3D3;
 }
 
@@ -192,12 +196,12 @@ h1 {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.false input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.false .checkmark:after {
   left: 7px;
   top: 5px;
   width: 5px;
@@ -208,6 +212,74 @@ h1 {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+  /* Checkbox true */
+  .true {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f2d0a9;
+    text-decoration: line-through;
+  }
+  
+  .true input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .true:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a pink background */
+  .true input:checked ~ .checkmark {
+    background-color: #F1E3D3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .true input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .true .checkmark:after {
+    left: 7px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
 .dreamTitle {
   width: 230px;

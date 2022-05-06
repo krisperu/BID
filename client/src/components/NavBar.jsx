@@ -14,6 +14,10 @@ function NavBar({ setUser, user }) {
 
   return (
     <aside className="ui color vertical menu">
+      <div className="nav-prof">
+        <img src={user.image} alt={user.id} className="ui avatar image"/>
+        <span>{user.name}</span>
+      </div>
       <NavLink
         to="/"
         exact
