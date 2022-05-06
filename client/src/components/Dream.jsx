@@ -2,21 +2,21 @@ import React, { useState } from 'react'
 import Detail from './Detail'
 import AddDetailForm from './AddDetailForm'
 
-function bool(done){
-  switch (done) {
-    case true:
-      return "true";
-    default:
-      return "false";
-  }
-}
+// function bool(done){
+//   switch (done) {
+//     case true:
+//       return "true";
+//     default:
+//       return "false";
+//   }
+// }
 
 
 function Dream({ dream, details, setDetails, done }) {
     const [showDetail, setShowDetail] = useState(false)
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState(done)
     const [showAddDetail, setShowAddDetail] = useState(false)
-    const thingy = bool(done)
+    // const thingy = bool(done)
 
   function handleShowDetail(e, showDetail) {
     e.stopPropagation()
@@ -33,7 +33,7 @@ function Dream({ dream, details, setDetails, done }) {
   )
 
   function handleCheckmark(){
-    const check = {
+    const newStatus = {
       status: !checked
     }
     fetch(`/dreams/${dream.id}`, {
@@ -41,7 +41,7 @@ function Dream({ dream, details, setDetails, done }) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(check)
+      body: JSON.stringify(newStatus)
     }).then(() => setChecked(!checked))
   }
 
@@ -49,8 +49,12 @@ function Dream({ dream, details, setDetails, done }) {
     <div>
       <button className="ui mini right floated circular basic icon button" onClick={(e) => handleShowDetail(e, showDetail)}><i aria-hidden="true" className="angle down icon"></i></button>
       <form className="dreamTitle">
-        <label className={thingy}>{dream.dream}
-        <input type="checkbox" onChange={handleCheckmark} />
+        <label className={checked ? "true" : "false"}>{dream.dream}
+        <input 
+          type="checkbox"
+          checked={checked}
+          value={checked} 
+          onChange={handleCheckmark} />
         <span className="checkmark"></span>
       </label>
       </form>

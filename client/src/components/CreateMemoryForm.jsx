@@ -42,7 +42,7 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
     const newMemory = {
       title: memoryFormData.title,
       desc: memoryFormData.desc,
-      img_one: memoryFormData.imgOne,
+      img_one: memoryFormData.imgOne ? memoryFormData.imgOne : "https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       img_two: memoryFormData.imgTwo,
       img_three: memoryFormData.imgThree,
       rating: memoryFormData.rating,
