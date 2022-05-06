@@ -79,12 +79,12 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
       <form className="ui form" onSubmit={handleSubmit}> 
         <div className="form-row">
             <div className="form">
-                <label>Title</label>
+                <label>Title  *</label>
                 <input
                   name="title"
                   type="text"
-                  id={FormData.title}
                   placeholder="ex. Trip to Italy"
+                  id={FormData.title}
                   value={memoryFormData.title}
                   onChange={(e) => handleChange(e)}
                 />
@@ -93,7 +93,7 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
         <div className="form-row">
             <div className="form">
                 <label>Notes</label>
-                <input
+                <textarea
                   name="desc"
                   type="text"
                   id={FormData.desc}
@@ -141,26 +141,20 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
         </div>
         <div className="form-row">
             <div className="form">
-                <label>Rating</label>
+                <label>Rating *</label>
                 <input
                   name="rating"
-                  type="integer"
+                  type="number"
+                  placeholder="1-5"
                   id={FormData.rating}
                   value={memoryFormData.rating}
                   onChange={(e) => handleChange(e)}
                 />
-                {/* <div className="ui star rating" role="radiogroup" tabIndex="-1">
-                  <i tabIndex="0" aria-checked="false" aria-posinset="1" aria-setsize="5" className="active icon" role="radio"></i>
-                  <i tabIndex="0" aria-checked="false" aria-posinset="2" aria-setsize="5" className="active icon" role="radio"></i>
-                  <i tabIndex="0" aria-checked="true" aria-posinset="3" aria-setsize="5" className="active icon" role="radio"></i>
-                  <i tabIndex="0" aria-checked="false" aria-posinset="4" aria-setsize="5" className="icon" role="radio"></i>
-                  <i tabIndex="0" aria-checked="false" aria-posinset="5" aria-setsize="5" className="icon" role="radio"></i>
-                </div> */}
             </div>
         </div>
         <div className="form-row">
           <div className="form">
-                <label>Dream</label>
+                <label>Dream *</label>
                 <select
                   name="dream_id"
                   id={FormData.dream_id}

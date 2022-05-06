@@ -36,9 +36,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* display: flex; */
     color: white;
-    /* justify-content: flex-start; */
   }
 
   .bg-text {
@@ -61,7 +59,6 @@ body {
   color: black;
     padding: 20px;
     font-size: 16px;
-    /* text-align: left; */
     }
 
   .space {
@@ -239,4 +236,8 @@ h1 {
 
 .mem-desc {
   background-color: #ffffff;
+}
+
+.emojis {
+  color: #D88C9A;
 }

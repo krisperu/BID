@@ -3,5 +3,5 @@ class Memory < ApplicationRecord
   belongs_to :dream
 
   validates :title, presence: true
-  validates :rating, numericality: {in: 1..5}
+  validates :rating, inclusion: 1..5
 end
