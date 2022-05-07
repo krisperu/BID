@@ -28,12 +28,12 @@ function EditProfile({ user, setUser }) {
             body: JSON.stringify(profileFormData)
         })
         .then((r) => {
-            if (r.ok) {
-              r.json().then((user) => setUser(user));
-            } else {
-              r.json().then((err) => setErrors(err.errors));
-            }
-          })
+        if (r.ok) {
+            r.json().then((user) => setUser(user));
+        } else {
+            r.json().then((err) => setErrors(err.errors));
+        }
+        })
         hisotry.push("/profile")
     }
 

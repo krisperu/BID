@@ -51,7 +51,7 @@ return (
             <div>Rating: <div className="emojis">{emojis}</div></div>
             <p>Notes: {memory.desc}</p>
         </div>
-        {showEditForm &&<EditMemory memory={memory} user={user} dreams={dreams} setCompletedDreams={setCompletedDreams} />}
+        {showEditForm &&<EditMemory memory={memory} user={user} dreams={dreams} setCompletedDreams={setCompletedDreams} dream={dream} />}
     </div> 
     <hr className="solid"></hr>
     <br></br> 

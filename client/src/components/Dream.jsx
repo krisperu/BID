@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Detail from './Detail'
 import AddDetailForm from './AddDetailForm'
+import EditDream from './EditDream'
 
-function Dream({ dream, details, setDetails, done }) {
+function Dream({ dream, details, setDetails, done, dreams, setDreams }) {
     const [showDetail, setShowDetail] = useState(false)
     const [checked, setChecked] = useState(done)
     const [showAddDetail, setShowAddDetail] = useState(false)
+    const [showEditForm, setShowEditForm] = useState(false)
 
   function handleShowDetail(e, showDetail) {
     e.stopPropagation()
@@ -15,6 +17,10 @@ function Dream({ dream, details, setDetails, done }) {
   function handleShowAddDetail(e, showAddDetail) {
     e.stopPropagation()
     setShowAddDetail(!showAddDetail)
+  }
+
+  function handleShowEditForm(showEditForm){
+    setShowEditForm(!showEditForm)
   }
 
   const detailObj = dream.details?.map((detail) => 
@@ -51,11 +57,19 @@ function Dream({ dream, details, setDetails, done }) {
       {showDetail &&
         <div>{detailObj}
         <button className="ui mini floated circular basic icon button" onClick={(e) => handleShowAddDetail(e, showAddDetail)}><i aria-hidden="true" className="add icon"></i></button>
+        <button className="ui mini floated circular basic icon button" onClick={(e) => handleShowEditForm(showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
           {showAddDetail &&<div>
             <AddDetailForm 
               dream={dream} 
               details={details} 
               setDetails={setDetails}
+            />
+          </div>}
+          {showEditForm &&<div>
+            <EditDream 
+              dream={dream} 
+              dreams={dreams}
+              setDreams={setDreams}
             />
           </div>}
           <br></br>

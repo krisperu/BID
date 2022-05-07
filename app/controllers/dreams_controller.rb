@@ -36,6 +36,6 @@ class DreamsController < ApplicationController
     end
 
     def dream_params
-        params.permit(:dream, :category, :status, :due, :list_id)
+        params.permit(:id, :dream, :category, :status, :due, :list_id)
     end
 end

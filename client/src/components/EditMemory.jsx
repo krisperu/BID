@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom"
 
-function EditMemory({ memory, user, dreams, setCompletedDreams }) {
+function EditMemory({ memory, user, dreams, setCompletedDreams, dream }) {
     let hisotry = useHistory()
     const [errors, setErrors] = useState([])
     const [memoryFormData, setMemoryFormData] = useState({
@@ -44,18 +44,17 @@ function handleSubmit() {
 //     })
 // }
 
-// const deleteMemory = (e, id) => {
+// const handleDelete = (e, id) => {
 //     e.stopPropagation()
 //     fetch(`/memories/${id}`, {
 //         method: "DELETE",
 //     }).then((r) => {
 //         if (r.ok) {
-//             setCompletedDreams(dreams.map(cd => {
-//                 cd.memories.filter((memory) => memory.id !== id)
-//             }))
+//             setCompletedDreams(dream.memories.filter((memObj) => memObj.id !== id))
 //         }
 //     })
 // }
+console.log(dream)
 
 return (
 <div className="center">
@@ -159,20 +158,10 @@ return (
     <button className="ui submit grey basic button center" type="submit">Submit</button>
     </div>
     <br></br>
-    {/* <button className="ui red basic button center" id="del-btn" onClick={handleDelete}>Delete Memory</button> */}
+    {/* <button className="ui red basic button center" id="del-btn" onClick={(e) => handleDelete(memory.id)}>Delete Memory</button> */}
     </form>
 </div>
 )
 }
 
 export default EditMemory
-
-
-// t.string "title"
-// t.string "desc"
-// t.string "img_one"
-// t.string "img_two"
-// t.string "img_three"
-// t.integer "rating"
-// t.bigint "user_id", null: false
-// t.bigint "dream_id", null: false

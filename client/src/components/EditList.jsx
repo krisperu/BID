@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditList({ list }) {
+function EditList({ list, setLists }) {
     let history = useHistory();
     const [listFormData, setListFormData] = useState({title: list.title})
   
@@ -37,7 +37,7 @@ function EditList({ list }) {
               />
           </div>
       </div>
-      <button className="ui submit basic button center" type="submit">Submit</button>
+      <button className="ui submit green basic button center" type="submit">Submit</button>
     </form>
   )
 }

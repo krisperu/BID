@@ -3,7 +3,7 @@ import EditList from './EditList'
 import Dream from './Dream'
 import AddDreamForm from './AddDreamForm'
 
-function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams, details, setDetails }) {
+function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetails }) {
   const [showEditForm, setShowEditForm] = useState(false)
   const [showAddDreamForm, setShowAddDreamForm] = useState(false)
 
@@ -27,7 +27,7 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
     });
   }
   const dream = list.dreams.map((dream) => 
-  <Dream key={dream.id} dream={dream} details={details} setDetails={setDetails} done={dream.status}/>
+  <Dream key={dream.id} dream={dream} details={details} setDetails={setDetails} done={dream.status} dreams={dreams} setDreams={setDreams}/>
   )
 
   function handleSendClick(){
@@ -55,7 +55,7 @@ function ListCard({ list, lists, setLists, onUpdateListTitle, dreams, setDreams,
           <button className="ui mini right floated circular basic icon button"  onClick={handleSendClick}><i aria-hidden="true" className="mail outline icon"></i></button>
         <div className="header">{list.title}</div>
         <br></br>
-          {showEditForm && <EditList list={list} onUpdateListTitle={onUpdateListTitle}/>}
+          {showEditForm && <EditList list={list} lists={lists} setLists={setLists}/>}
         <div className="description">{dream}</div>
       </div>
         <div className="extra content">
