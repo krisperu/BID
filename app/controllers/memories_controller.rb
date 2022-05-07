@@ -31,6 +31,6 @@ class MemoriesController < ApplicationController
     end
 
     def memory_params
-        params.permit(:title, :desc, :img_one, :img_two, :img_three, :rating, :user_id, :dream_id)
+        params.permit(:id, :title, :desc, :img_one, :img_two, :img_three, :rating, :user_id, :dream_id)
     end
 end

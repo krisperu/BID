@@ -23,6 +23,9 @@ function Profile({ user, setUser }) {
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
+            <div className="description">Lists: {user.lists.length}</div>
+        </div>
+        <div className="extra content">
           <button className="ui submit grey basic button center" onClick={() => handleEditForm(showEditForm)}>Edit Profile</button>
         </div>
         {showEditForm &&<EditProfile user={user} setUser={setUser}/>}

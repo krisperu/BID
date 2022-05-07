@@ -26,6 +26,9 @@ const dreamObj = completedDreams?.map(filteredDream =>
 <Memories 
     key={filteredDream.id}
     dream={filteredDream}
+    user={user}
+    dreams={completedDreams}
+    setCompletedDreams={setCompletedDreams}
     />
 )
 
@@ -37,9 +40,8 @@ return (
 <div>
     <br></br>
     <button onClick={() => handleCreateMemoryForm(showCreateMemoryForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add Memory</button>
-    <br></br>
+    <h3>Achieved Dreams: {completedDreams.length}</h3>
     {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} setCompletedDreams={setCompletedDreams}/>}
-    <br></br>
     {dreamObj}
 </div>
 )

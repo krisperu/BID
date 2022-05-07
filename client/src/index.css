@@ -313,3 +313,8 @@ h1 {
 .emojis {
   color: #D88C9A;
 }
+
+/* delete button on memory card */
+#del-btn {
+  margin: 5px;
+}

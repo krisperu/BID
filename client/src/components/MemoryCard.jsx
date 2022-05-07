@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import EditMemory from './EditMemory'
 
 function emojiRating(rating) {
     switch (rating) {
@@ -14,8 +15,13 @@ function emojiRating(rating) {
             return "♥︎♥︎♥︎♥︎♥︎"
     }
 }
-function MemoryCard({ memory, dream, rating }) {
+function MemoryCard({ memory, dream, rating, user, dreams, setCompletedDreams }) {
+    const [showEditForm, setShowEditForm] = useState(false)
     const emojis = emojiRating(rating)
+
+    function handleEditForm(showEditForm){
+        setShowEditForm(!showEditForm)
+    }
  
 return (
 <div className="memory_obj">
@@ -39,11 +45,13 @@ return (
     </div>
     <br></br>     
     <div className="mem-desc">
+        <button className="ui mini right floated circular basic icon button" onClick={(e) => handleEditForm(showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
         <h3 className="">{memory.title}</h3>
         <div className="description">
             <div>Rating: <div className="emojis">{emojis}</div></div>
             <p>Notes: {memory.desc}</p>
         </div>
+        {showEditForm &&<EditMemory memory={memory} user={user} dreams={dreams} setCompletedDreams={setCompletedDreams} />}
     </div> 
     <hr className="solid"></hr>
     <br></br> 

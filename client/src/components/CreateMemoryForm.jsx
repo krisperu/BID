@@ -108,8 +108,7 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
                 <input
                   name="imgOne"
                   type="text"
-                  id={FormData.img_one}
-                  defaultValue="https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  id={FormData.imgOne}
                   value={memoryFormData.imgOne}
                   onChange={(e) => handleChange(e)}
                 />

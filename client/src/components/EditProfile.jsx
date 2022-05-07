@@ -11,9 +11,6 @@ function EditProfile({ user, setUser }) {
         password: user.password_digest
     })
 
-    console.log(user.password_digest)
-
-
     function handleChange(e) {
         setProfileFormData({
             ...profileFormData,
@@ -89,10 +86,3 @@ return (
 }
 
 export default EditProfile
-
-// t.string "username"
-//     t.string "email"
-//     t.string "password_digest"
-//     t.string "name"
-//     t.string "image"
-//     t.string "bio"

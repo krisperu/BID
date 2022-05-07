@@ -1,11 +1,19 @@
 import React from 'react'
 import MemoryCard from './MemoryCard'
 
-function Memories({ dream }) {
+function Memories({ dream, dreams, user, setCompletedDreams }) {
 
 
   const memoryObj = dream.memories?.map((memory) =>
-    <MemoryCard key={memory.id} memory={memory} imgOne={memory.img_one} imgTwo={memory.img_two} imgThree={memory.img_three} dream={dream} rating={memory.rating}/>
+    <MemoryCard 
+      key={memory.id} 
+      memory={memory} 
+      dream={dream} 
+      rating={memory.rating}
+      user={user}
+      dreams={dreams}
+      setCompletedDreams={setCompletedDreams}
+      />
   )
 
   return (
