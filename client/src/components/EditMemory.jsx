@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom"
 
-function EditMemory({ memory, user, dreams, setCompletedDreams, dream }) {
+function EditMemory({ memory, user, dreams, setCompletedDreams, dream, memories, setMemories }) {
     let hisotry = useHistory()
     const [errors, setErrors] = useState([])
     const [memoryFormData, setMemoryFormData] = useState({
@@ -31,29 +31,6 @@ function handleSubmit() {
     hisotry.push("/memories")
 }
 
-// function handleDelete(e, id) {
-//     e.stopPropagation()
-//     fetch(`/memories/${id}`, {
-//         method: "DELETE",
-//     }).then((r) => {
-//         if (r.ok) {
-//             setCompletedDreams(dreams.map(cd => {
-//                 cd.memories.filter((memory) => memory.id !== id)
-//             }))
-//         }
-//     })
-// }
-
-// const handleDelete = (e, id) => {
-//     e.stopPropagation()
-//     fetch(`/memories/${id}`, {
-//         method: "DELETE",
-//     }).then((r) => {
-//         if (r.ok) {
-//             setCompletedDreams(dream.memories.filter((memObj) => memObj.id !== id))
-//         }
-//     })
-// }
 console.log(dream)
 
 return (
@@ -158,7 +135,6 @@ return (
     <button className="ui submit grey basic button center" type="submit">Submit</button>
     </div>
     <br></br>
-    {/* <button className="ui red basic button center" id="del-btn" onClick={(e) => handleDelete(memory.id)}>Delete Memory</button> */}
     </form>
 </div>
 )

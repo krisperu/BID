@@ -24,7 +24,8 @@ function EditList({ list, setLists }) {
     }
   
   return (
-    <form className="ui form" onSubmit={handleSubmit}> 
+    <div>
+      <form className="ui form" onSubmit={handleSubmit}> 
       <div className="form-row">
           <div className="form-group col-5">
               <label>List Title</label>
@@ -39,6 +40,9 @@ function EditList({ list, setLists }) {
       </div>
       <button className="ui submit green basic button center" type="submit">Submit</button>
     </form>
+      <br></br>
+    </div>
+    
   )
 }
 

@@ -6,21 +6,22 @@ function DreamMemMap({ user }) {
     const [completedDreams, setCompletedDreams] = useState([])
     const [showCreateMemoryForm, setShowCreateMemoryForm] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [memories, setMemories] = useState([])
 
      //Fetch Completed Dreams
     useEffect(() => {
-    setLoading(true)
-    fetch("/completeddreams")
-    .then((r) => r.json())
-    .then(setCompletedDreams)
-    .finally(() => {
-    setLoading(false)
-    })
-}, [])
+        setLoading(true)
+        fetch("/completeddreams")
+        .then((r) => r.json())
+        .then(setCompletedDreams)
+        .finally(() => {
+        setLoading(false)
+        })
+    }, [])
 
-if (loading) {
-return <p>Data is loading...</p>;
-}
+    if (loading) {
+    return <p>Data is loading...</p>;
+    }
 
 const dreamObj = completedDreams?.map(filteredDream =>
 <Memories 
@@ -43,6 +44,10 @@ return (
     <h3>Achieved Dreams: {completedDreams.length}</h3>
     {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} setCompletedDreams={setCompletedDreams}/>}
     {dreamObj}
+    <div className='footer'>
+          <div>BID | //Flatiron School</div>   
+          <div>Created By: Kristina Peru | <a href="https://github.com/krisperu/BID">GitHub</a> | <a href="https://www.linkedin.com/in/kristina-peru-205557189/">Contact Me</a></div>
+        </div>
 </div>
 )
 }

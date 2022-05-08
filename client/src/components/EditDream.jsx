@@ -62,7 +62,7 @@ return (
     {/* <div className="form-row">
         <div className="form">
             <label>Finish By</label>
-            <input 🔥
+            <input
                 name="due"
                 type="date"
                 id={FormData.due}

@@ -15,12 +15,22 @@ function emojiRating(rating) {
             return "♥︎♥︎♥︎♥︎♥︎"
     }
 }
-function MemoryCard({ memory, dream, rating, user, dreams, setCompletedDreams }) {
+function MemoryCard({ memory, dream, rating, setCompletedDreams }) {
     const [showEditForm, setShowEditForm] = useState(false)
     const emojis = emojiRating(rating)
 
     function handleEditForm(showEditForm){
         setShowEditForm(!showEditForm)
+    }
+
+    const handleDelete = (id) => {
+        fetch(`/memories/${id}`, {
+            method: "DELETE",
+        }).then((r) => {
+            if (r.ok) {
+                setCompletedDreams(dream.memories.filter((memObj) => memObj.id !== id))
+            }
+        })
     }
  
 return (
@@ -45,13 +55,22 @@ return (
     </div>
     <br></br>     
     <div className="mem-desc">
-        <button className="ui mini right floated circular basic icon button" onClick={(e) => handleEditForm(showEditForm)}><i aria-hidden="true" className="pencil alternate icon"></i></button>
+        <button 
+            className="ui mini right floated circular basic icon button"
+            onClick={() => handleDelete(memory.id)}>
+                <i aria-hidden="true" className="close link icon"></i>
+        </button>
+        <button
+            className="ui mini right floated circular basic icon button"
+            onClick={(e) => handleEditForm(showEditForm)}>
+                <i aria-hidden="true" className="pencil alternate icon"></i>
+        </button>
         <h3 className="">{memory.title}</h3>
         <div className="description">
             <div>Rating: <div className="emojis">{emojis}</div></div>
             <p>Notes: {memory.desc}</p>
         </div>
-        {showEditForm &&<EditMemory memory={memory} user={user} dreams={dreams} setCompletedDreams={setCompletedDreams} dream={dream} />}
+        {showEditForm &&<EditMemory memory={memory} dream={dream}/>}
     </div> 
     <hr className="solid"></hr>
     <br></br> 
