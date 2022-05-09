@@ -94,7 +94,6 @@ function Dream({ dream, details, setDetails, done, dreams, setDreams }) {
       {showDetail &&
         <div>
           {detailObj}
-          <br></br>
           <Popup 
               content='Add Detail' 
               size='mini'

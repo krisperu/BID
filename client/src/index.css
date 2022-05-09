@@ -109,6 +109,7 @@ aside button {
 .main {
     margin-left: 200px; 
     padding: 0px 10px;
+    background-color: #FAF9F6;
   }
 
   .background {
@@ -150,6 +151,7 @@ aside button {
 #landing-footer {
     border-top: 1px solid #99C1B9;
     color: #707070;
+    background-color: #FAF9F6;
     text-align: left;
     padding-bottom: 2px;
     padding-left: 3px;
@@ -306,8 +308,9 @@ aside button {
   color: #D88C9A;
 }
 
-/* delete button on memory card */
-#del-btn {
-  margin: 5px;
-  padding: 3px;
+.mem-title {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #dededf;
 }
+

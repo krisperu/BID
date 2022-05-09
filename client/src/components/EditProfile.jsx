@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom";
 
 function EditProfile({ user, setUser }) {
-    let hisotry = useHistory()
     const [errors, setErrors] = useState([])
     const [profileFormData, setProfileFormData] = useState({
         name: user.name,
@@ -34,7 +32,6 @@ function EditProfile({ user, setUser }) {
             r.json().then((err) => setErrors(err.errors));
         }
         })
-        hisotry.push("/profile")
     }
 
 return (
