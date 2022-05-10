@@ -18,8 +18,8 @@ class UsersController < ApplicationController
     end
 
     def update
-        user = @user.update!(user_params)
-        render json: user, status: :accepted
+        @user.update!(user_params)
+        render json: @user, status: :accepted
     end
 
     def destroy

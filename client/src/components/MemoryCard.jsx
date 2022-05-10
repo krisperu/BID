@@ -16,7 +16,7 @@ function emojiRating(rating) {
             return "♥︎♥︎♥︎♥︎♥︎"
     }
 }
-function MemoryCard({ memory, dream, rating, setCompletedDreams }) {
+function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
     const [showEditForm, setShowEditForm] = useState(false)
     const emojis = emojiRating(rating)
 
@@ -91,7 +91,7 @@ return (
             <p>Notes: {memory.desc}</p>
             <br></br>
         </div>
-        {showEditForm &&<EditMemory memory={memory} dream={dream}/>}
+        {showEditForm &&<EditMemory memory={memory} dream={dream} dreams={dreams} setCompletedDreams={setCompletedDreams}/>}
     </div> 
     <hr className="solid"></hr>
     <br></br> 

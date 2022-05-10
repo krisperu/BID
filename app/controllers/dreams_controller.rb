@@ -15,8 +15,8 @@ class DreamsController < ApplicationController
     end
 
     def update
-        dream = @dream.update!(dream_params)
-        render json: dream, status: :accepted
+        @dream.update!(dream_params)
+        render json: @dream, status: :accepted
     end
 
     def destroy

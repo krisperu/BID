@@ -28,9 +28,13 @@ function EditProfile({ user, setUser }) {
         })
         .then((r) => {
         if (r.ok) {
-            r.json().then((user) => setUser(user));
-        } else {
-            r.json().then((err) => setErrors(err.errors));
+            r.json().then((user) => {
+                setUser(user) 
+                console.log(user)
+            });
+    
+        // } else {
+        //     r.json().then((err) => setErrors(err.errors));
         }
         })
     }
@@ -74,11 +78,11 @@ return (
                     />
                 </div>
             </div>
-            <div>
+            {/* <div>
                 {errors.map((error) => (
                     <ul className="errors">・ {error}</ul>
                     ))}
-            </div>
+            </div> */}
             <button className="ui submit basic button center" type="submit">Submit</button>
         </form>
         <ImageForm user={user}/>

@@ -16,8 +16,8 @@ class ListsController < ApplicationController
     end
 
     def update
-        list = @list.update!(list_params)
-        render json: list, status: :accepted
+        @list.update!(list_params)
+        render json: @list, status: :accepted
     end
 
     def email_list

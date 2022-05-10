@@ -47,6 +47,8 @@ function Profile({ user, setUser }) {
     .then(setProfilePics)
   }, [])
 
+  console.log(user)
+
   return (
     <div>
       <br></br>
@@ -64,7 +66,7 @@ function Profile({ user, setUser }) {
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
-            <div className="description"><b>Lists: </b>{user.lists.length}</div>
+            {/* <div className="description"><b>Lists: </b>{user.lists.length}</div> */}
         </div>
         <div className="extra content">
           <button className="ui submit grey basic button center" onClick={() => handleEditForm(showEditForm)}>Edit Profile</button>

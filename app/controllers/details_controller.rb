@@ -15,8 +15,8 @@ class DetailsController < ApplicationController
     end
 
     def update
-        detail = @detail.update!(detail_params)
-        render json: detail, status: :accepted
+        @detail.update!(detail_params)
+        render json: @detail, status: :accepted
     end
 
     def destroy

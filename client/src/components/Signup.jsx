@@ -111,8 +111,8 @@ function Signup({ user, setUser }) {
               <br></br>
               <br></br>
               <button className="ui basic submit button center" type="submit">Sign Up</button>
-            </form>
             <ImageForm user={user}/>
+            </form>
           </div>
         </div>
       </div>

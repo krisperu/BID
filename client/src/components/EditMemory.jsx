@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from "react-router-dom"
 
 function EditMemory({ memory, user, dreams, setCompletedDreams, dream, memories, setMemories }) {
-    let hisotry = useHistory()
+    let history = useHistory()
     const [errors, setErrors] = useState([])
     const [memoryFormData, setMemoryFormData] = useState({
         title: memory.title,
@@ -20,7 +20,19 @@ function EditMemory({ memory, user, dreams, setCompletedDreams, dream, memories,
         })
     }
 
-function handleSubmit() {
+    function onCreateMem(newMem){
+        const newMemObj = dreams.map((cd) => {
+            if (cd.id === newMem.dream.id) {
+                return { ...cd, memories: cd.memories.map((mem) => mem.id == newMem.id ? newMem : mem)}
+            } else {
+                return cd
+            }
+        })
+        setCompletedDreams(newMemObj)
+    }
+
+function handleSubmit(e) {
+    e.preventDefault()
     fetch(`/memories/${memory.id}`, {
         method: "PATCH",
         headers: {
@@ -28,7 +40,8 @@ function handleSubmit() {
         },
         body: JSON.stringify(memoryFormData)
     })
-    hisotry.push("/memories")
+    .then((r) => r.json()).then((newMem) => onCreateMem(newMem))
+    history.push("/memories")
 }
 
 console.log(dream)

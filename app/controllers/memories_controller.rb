@@ -25,8 +25,8 @@ class MemoriesController < ApplicationController
     # end
 
     def update
-        memory = @memory.update!(memory_params)
-        render json: memory, status: :accepted
+        @memory.update!(memory_params)
+        render json: @memory, status: :accepted
     end
 
     def destroy
