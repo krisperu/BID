@@ -6,7 +6,6 @@ function DreamMemMap({ user }) {
     const [completedDreams, setCompletedDreams] = useState([])
     const [showCreateMemoryForm, setShowCreateMemoryForm] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [memories, setMemories] = useState([])
 
      //Fetch Completed Dreams
     useEffect(() => {

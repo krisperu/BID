@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AddDreamForm({ list, dreams, setDreams }) {
+function AddDreamForm({ list, dreams, setDreams, lists, setLists }) {
     const [errors, setErrors] = useState([])
     const [dreamFormData, setDreamFormData] = useState({
         dream: '',
@@ -18,36 +18,50 @@ function AddDreamForm({ list, dreams, setDreams }) {
         list_id: list.id
     })
 
-    function onCreateDream(newDream) {
-        setDreams([...dreams, newDream])
+    // function onCreateDream(newDream) {
+    //     setDreams([...dreams, newDream])
+    // }
+
+    function onCreateDream(newDreamItem) {
+      const updList = lists.map(nd => {
+        if (nd.id === newDreamItem.list.id) {
+          return {...nd, dreams: [...nd.dreams, newDreamItem]}
+        } else {
+          return nd
+        }
+      })
+      setLists(updList)
     }
 
-    function handleSubmit(){
-        setErrors([])
+    // console.log(list)
 
-        const newDream = {
-            dream: dreamFormData.dream,
-            category: dreamFormData.category,
-            status: dreamFormData.status,
-            due: dreamFormData.due,
-            list_id: dreamFormData.list_id
-        }
+    function handleSubmit(e){
+      e.preventDefault()
+      setErrors([])
 
-        fetch(`/dreams`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newDream),
+      const newDream = {
+          dream: dreamFormData.dream,
+          category: dreamFormData.category,
+          status: dreamFormData.status,
+          due: dreamFormData.due,
+          list_id: dreamFormData.list_id
+      }
+
+      fetch(`/dreams`, {
+          method: 'POST',
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newDream),
+      })
+      .then((r) => {
+          if (r.ok) {
+            r.json().then((dream) => onCreateDream(dream));
+          } else {
+            r.json().then((err) => setErrors(err.errors));
+          }
         })
-        .then((r) => {
-            if (r.ok) {
-              r.json().then((dream) => onCreateDream(dream));
-            } else {
-              r.json().then((err) => setErrors(err.errors));
-            }
-          })
-          .then(setDreamFormData(initialFormState));
+        .then(setDreamFormData(initialFormState));
     }
 
     function handleChange(e) {

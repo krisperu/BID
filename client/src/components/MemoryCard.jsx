@@ -62,13 +62,13 @@ return (
             position='top right' 
             trigger={<Button floated='right' 
             circular
-            icon='close link' 
+            icon='close' 
             basic 
             size='mini'
           />}>
             <Icon name='hand paper outline' color='red' size='big'/>
             <p>
-              Are you sure you want to delete this list?
+              Are you sure you want to delete this memory?
             </p>
             <Button basic color='red' size='mini' onClick={() => handleDelete(memory.id)}>
               Delete

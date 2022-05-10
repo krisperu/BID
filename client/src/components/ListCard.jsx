@@ -65,7 +65,7 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
             position='top center' 
             trigger={<Button floated='right' 
             circular
-            icon='close link' 
+            icon='close' 
             basic 
             size='mini'
           />}>
@@ -115,7 +115,7 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
               Add New Dream
             </button>
           </div>
-            {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams}/>}
+            {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams} lists={lists} setLists={setLists}/>}
         </div>
       </div>
       <br></br>
