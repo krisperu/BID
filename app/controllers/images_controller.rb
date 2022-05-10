@@ -1,8 +1,8 @@
 class ImagesController < ApplicationController
-  # before_action :user_id, only: :create
+  before_action :user_id, only: :index
 
   def index
-    render json: Image.all
+    render json: user_id.images.last
   end
 
   def create

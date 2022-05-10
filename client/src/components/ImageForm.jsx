@@ -8,12 +8,8 @@ const ImageUploadForm = ({ user }) => {
     setImages(e.target.files[0]);
   };
 
-//   function onCreateImage(newImage) {
-//       setImages([...images, newImage])
-//   }
-  
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
     const data = new FormData();
     data.append('images', images);
 
@@ -24,17 +20,18 @@ const ImageUploadForm = ({ user }) => {
     // .then((r) => r.json())
     // .then((data) => onCreateImage(data))
   };
-
-  // console.log(user.images)
   
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="ui form" onSubmit={handleSubmit}>
+        <div className="form-group col-5">
         <label>Image upload </label>
         <input type="file" name="image" onChange={handleChange} />
     
-        <input type="submit" />
+        <button className="ui submit basic button center" type="submit">Upload Image</button>
+        </div>
       </form>
+      <br></br>
     </div>
   )
 };

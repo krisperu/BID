@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import EditProfile from './EditProfile'
 import { Button, Modal } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom"
-import ImageForm from "./ImageForm"
+// import ImageForm from "./ImageForm"
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -47,23 +47,15 @@ function Profile({ user, setUser }) {
     .then(setProfilePics)
   }, [])
 
-  // console.log(profilePics)
-
-  const profilePicture = profilePics.map((picture) =>
-   <img key={picture.id} src={picture.image} alt={picture.id} className="profile-pic"/>
-  )
-
   return (
     <div>
       <br></br>
       <h2>My Profile:</h2>
-      <ImageForm user={user}/>
       <br></br>
-      {profilePicture}
       <div className="center">
         <div className="ui centered card">
         <div className="image">
-          <img src={user.image} alt={user.id}/>
+          {/* <img src={profilePics.image} alt={user.id}/> */}
         </div>
         <div className="content">
           <div className="header">Name: {user.name}</div>
@@ -72,7 +64,7 @@ function Profile({ user, setUser }) {
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
-            {/* <div className="description">Lists: {user.lists.length}</div> */}
+            <div className="description"><b>Lists: </b>{user.lists.length}</div>
         </div>
         <div className="extra content">
           <button className="ui submit grey basic button center" onClick={() => handleEditForm(showEditForm)}>Edit Profile</button>

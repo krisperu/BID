@@ -4,7 +4,7 @@ import AddDetailForm from './AddDetailForm'
 import EditDream from './EditDream'
 import { Popup } from 'semantic-ui-react'
 
-function Dream({ dream, details, setDetails, done, dreams, setDreams }) {
+function Dream({ dream, details, setDetails, done, dreams, setDreams, lists, setLists, list }) {
     const [showDetail, setShowDetail] = useState(false)
     const [checked, setChecked] = useState(done)
     const [showAddDetail, setShowAddDetail] = useState(false)
@@ -38,7 +38,7 @@ function Dream({ dream, details, setDetails, done, dreams, setDreams }) {
       }
     
       const detailObj = dream.details?.map((detail) => 
-        <Detail key={detail.id} detail={detail}/>
+        <Detail key={detail.id} detail={detail} dreams={dreams}/>
       )
 
       const style = {
@@ -111,6 +111,9 @@ function Dream({ dream, details, setDetails, done, dreams, setDreams }) {
               dream={dream} 
               details={details} 
               setDetails={setDetails}
+              lists={lists}
+              setLists={setLists}
+              list={list}
             />
         </div>}
         <br></br>

@@ -33,8 +33,9 @@ function LandingPage({ user }) {
     .then(setDetails)
   }, [])
 
-  function handleUpdateListTitle(updatedListTitle) {
-    setLists(updatedListTitle)
+  function handleUpdateListTitle(updatedList) {
+    console.log("updating list", updatedList)
+    setLists(updatedList)
   }
   
   const listObj = lists.map((list) => 

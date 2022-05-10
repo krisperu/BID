@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-function AddDetailForm({ dream, details, setDetails }) {
+function AddDetailForm({ dream, details, setDetails, lists, setLists, list }) {
   const [errors, setErrors] = useState([])
   const [detailFormData, setDetailFormData] = useState({
     details: '', 
     image: '', 
     dream_id: dream.id
   })
+  console.log(dream)
 
   const initialFormState = ({
     details: '',
@@ -18,8 +19,18 @@ function AddDetailForm({ dream, details, setDetails }) {
     setDetails([...details, newDetail])
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  // function test(newDetailItem) {
+  //   const updDream = dream.map(nd => {
+  //     if (nd.id === newDetailItem.detail.id) {
+  //       return {...nd, details: [...nd.details, newDetailItem]}
+  //     } else {
+  //       return nd
+  //     }
+  //   })
+  //   setDreams(updDream)
+  // }
+
+  function handleSubmit() {
     setErrors([])
 
     const newDetail ={
