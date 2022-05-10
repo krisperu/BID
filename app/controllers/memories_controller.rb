@@ -14,6 +14,16 @@ class MemoriesController < ApplicationController
         render json: memory, status: :created
     end
 
+    # def upload_img
+    #     image = Cloudinary::Uploader.upload(params[:image_one, :image_two, :image_three])
+    #     pic = Memory.create(image_one: image_one['url'], image_two: image_two['url'], image_three: image_three['url'])
+        
+    #     render json: {
+    #         status: 200,
+    #         pic: pic
+    #     }
+    # end
+
     def update
         memory = @memory.update!(memory_params)
         render json: memory, status: :accepted

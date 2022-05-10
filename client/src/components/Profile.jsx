@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import EditProfile from './EditProfile'
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
+import { Button, Modal } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom"
+import ImageForm from "./ImageForm"
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -16,6 +17,7 @@ function exampleReducer(state, action) {
 
 function Profile({ user, setUser }) {
   let hisotry = useHistory()
+  const [profilePics, setProfilePics] = useState([])
   const [showEditForm, setShowEditForm] = useState(false)
   const [state, dispatch] = React.useReducer(exampleReducer, {
     open: false,
@@ -30,7 +32,7 @@ function Profile({ user, setUser }) {
   const deleteProfile = (id) => {
     fetch(`/users/${id}`, {
       method: 'DELETE',
-    }) .then((r) => {
+    }).then((r) => {
       if (r.ok) {
         setUser(null)
       }
@@ -38,10 +40,26 @@ function Profile({ user, setUser }) {
     hisotry.push("/")
   }
 
+  //Fetching images
+  useEffect(() => {
+    fetch("/images")
+    .then((r) => r.json())
+    .then(setProfilePics)
+  }, [])
+
+  // console.log(profilePics)
+
+  const profilePicture = profilePics.map((picture) =>
+   <img key={picture.id} src={picture.image} alt={picture.id} className="profile-pic"/>
+  )
+
   return (
     <div>
       <br></br>
       <h2>My Profile:</h2>
+      <ImageForm user={user}/>
+      <br></br>
+      {profilePicture}
       <div className="center">
         <div className="ui centered card">
         <div className="image">

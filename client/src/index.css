@@ -314,3 +314,7 @@ aside button {
   box-shadow: 0 0 10px #dededf;
 }
 
+.profile-pic {
+  max-height: 440px;
+  max-width: 290xpx;
+}
