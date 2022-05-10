@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ImageForm from './ImageForm'
 
 function Signup({ user, setUser }) {
   const [errors, setErrors] = useState([])
@@ -111,7 +110,6 @@ function Signup({ user, setUser }) {
               <br></br>
               <br></br>
               <button className="ui basic submit button center" type="submit">Sign Up</button>
-            <ImageForm user={user}/>
             </form>
           </div>
         </div>

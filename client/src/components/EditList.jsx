@@ -25,8 +25,8 @@ function EditList({ list, setLists, onUpdateListTitle }) {
         },
         body: JSON.stringify(listFormData)
       })
-      // .then((r) => r.json())
-      // .then((updatedList) => setLists(updatedList))
+      .then((r) => r.json())
+      .then((updatedList) => setLists(updatedList))
       history.push("/")
     }
   

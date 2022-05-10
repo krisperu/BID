@@ -41,6 +41,6 @@ class ListsController < ApplicationController
     end
 
     def list_params
-        params.permit(:title, :schedule_send, :user_id)
+        params.permit(:id, :title, :schedule_send, :user_id)
     end
 end

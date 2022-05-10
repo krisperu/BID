@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import EditProfile from './EditProfile'
 import { Button, Modal } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom"
-// import ImageForm from "./ImageForm"
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -15,9 +14,8 @@ function exampleReducer(state, action) {
   }
 }
 
-function Profile({ user, setUser }) {
+function Profile({ user, setUser,profilePics }) {
   let hisotry = useHistory()
-  const [profilePics, setProfilePics] = useState([])
   const [showEditForm, setShowEditForm] = useState(false)
   const [state, dispatch] = React.useReducer(exampleReducer, {
     open: false,
@@ -40,15 +38,6 @@ function Profile({ user, setUser }) {
     hisotry.push("/")
   }
 
-  //Fetching images
-  useEffect(() => {
-    fetch("/images")
-    .then((r) => r.json())
-    .then(setProfilePics)
-  }, [])
-
-  console.log(user)
-
   return (
     <div>
       <br></br>
@@ -57,7 +46,7 @@ function Profile({ user, setUser }) {
       <div className="center">
         <div className="ui centered card">
         <div className="image">
-          {/* <img src={profilePics.image} alt={user.id}/> */}
+          <img src={profilePics ? profilePics.image : user.image} alt={user.id}/>
         </div>
         <div className="content">
           <div className="header">Name: {user.name}</div>
@@ -66,7 +55,7 @@ function Profile({ user, setUser }) {
           <div className="description">Bio: {user.bio}</div>
         </div>
         <div className="extra content">
-            {/* <div className="description"><b>Lists: </b>{user.lists.length}</div> */}
+            <div className="description"><b>Lists: </b>{user.lists.length}</div>
         </div>
         <div className="extra content">
           <button className="ui submit grey basic button center" onClick={() => handleEditForm(showEditForm)}>Edit Profile</button>

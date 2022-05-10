@@ -6,8 +6,7 @@ function EditProfile({ user, setUser }) {
     const [profileFormData, setProfileFormData] = useState({
         name: user.name,
         image: user.image,
-        bio: user.bio,
-        // password: user.password_digest
+        bio: user.bio
     })
 
     function handleChange(e) {
@@ -33,8 +32,8 @@ function EditProfile({ user, setUser }) {
                 console.log(user)
             });
     
-        // } else {
-        //     r.json().then((err) => setErrors(err.errors));
+        } else {
+            r.json().then((err) => setErrors(err.errors));
         }
         })
     }
@@ -78,11 +77,11 @@ return (
                     />
                 </div>
             </div>
-            {/* <div>
+            <div>
                 {errors.map((error) => (
                     <ul className="errors">・ {error}</ul>
                     ))}
-            </div> */}
+            </div>
             <button className="ui submit basic button center" type="submit">Submit</button>
         </form>
         <ImageForm user={user}/>

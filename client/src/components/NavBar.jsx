@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 
-function NavBar({ setUser, user }) {
+function NavBar({ setUser, user, profilePics }) {
 
   const logout = () => {
     fetch('/logout',{
@@ -15,7 +15,7 @@ function NavBar({ setUser, user }) {
   return (
     <aside className="ui color vertical menu">
       <div className="nav-prof">
-        <img src={user.image} alt={user.id} className="ui avatar image"/>
+        <img src={profilePics ? profilePics.image : user.image} alt={user.id} className="ui avatar image"/>
         <span>{user.name}</span>
       </div>
       <NavLink

@@ -8,6 +8,7 @@ import NavBar from './NavBar'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [profilePics, setProfilePics] = useState([])
   
   //Auto-login
   useEffect(() => {
@@ -18,11 +19,18 @@ function App() {
     });
   }, [])
 
+  //Fetching images
+  useEffect(() => {
+    fetch("/images")
+    .then((r) => r.json())
+    .then(setProfilePics)
+  }, [])
+
   if (!user) return <Login setUser={setUser}/>
 
   return (
     <div>
-      <NavBar user={user} setUser={setUser}/>
+      <NavBar user={user} setUser={setUser} profilePics={profilePics}/>
       <div className="main">
         <div className="logo">
         <h1>Before I Die</h1>
@@ -38,7 +46,11 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={user} setUser={setUser}/>
+            <Profile 
+              user={user}
+              setUser={setUser}
+              profilePics={profilePics}
+            />
           </Route>
         </Switch>
       </div>
