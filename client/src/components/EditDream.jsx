@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditDream({ dream, dreams, setDreams }) {
+function EditDream({ dream, dreams, setDreams, lists, setLists }) {
     let hisotry = useHistory()
     const [errors, setErrors] = useState([])
     const [dreamFormData, setDreamFormData] = useState({
@@ -15,7 +15,19 @@ function handleChange(e) {
     })
 }
 
-function handleSubmit(){
+function onEditDream(newDrm) {
+    const newDreamObj = lists.map((listItem) => {
+        if (listItem.id === newDrm.list.id) {
+            return {...listItem, dreams: listItem.dreams.map((dreamItem) => dreamItem.id === newDrm.id ? newDrm : dreamItem) }
+        } else {
+            return listItem
+        }
+    })
+    setLists(newDreamObj)
+}
+
+function handleSubmit(e){
+    e.preventDefault()
     fetch(`/dreams/${dream.id}`, {
         method: "PATCH",
         headers: {
@@ -25,7 +37,7 @@ function handleSubmit(){
     })
     .then((r) => {
         if (r.ok) {
-            r.json().then((dreamItm) => setDreamFormData(dreamItm));
+            r.json().then((newDrm) => onEditDream(newDrm));
         } else {
             r.json().then((err) => setErrors(err.errors));
           }

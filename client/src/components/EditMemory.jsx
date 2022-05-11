@@ -20,10 +20,10 @@ function EditMemory({ memory, user, dreams, setCompletedDreams, dream, memories,
         })
     }
 
-    function onCreateMem(newMem){
+    function onEditMem(newMem){
         const newMemObj = dreams.map((cd) => {
             if (cd.id === newMem.dream.id) {
-                return { ...cd, memories: cd.memories.map((mem) => mem.id == newMem.id ? newMem : mem)}
+                return { ...cd, memories: cd.memories.map((mem) => mem.id === newMem.id ? newMem : mem)}
             } else {
                 return cd
             }
@@ -40,11 +40,11 @@ function handleSubmit(e) {
         },
         body: JSON.stringify(memoryFormData)
     })
-    .then((r) => r.json()).then((newMem) => onCreateMem(newMem))
+    .then((r) => r.json()).then((newMem) => onEditMem(newMem))
     history.push("/memories")
 }
 
-console.log(dream)
+// console.log(dream)
 
 return (
 <div className="center">

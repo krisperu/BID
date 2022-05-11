@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditList({ list, setLists, onUpdateListTitle }) {
+function EditList({ list, lists, setLists, onUpdateListTitle }) {
     let history = useHistory();
     const [listFormData, setListFormData] = useState({title: list.title})
   
@@ -12,9 +12,9 @@ function EditList({ list, setLists, onUpdateListTitle }) {
       });
     }
 
-    // function handleUpdateListTitle(updatedListTitle) {
-    //   setLists(updatedListTitle)
-    // }
+    function onEditList(updatedList) {
+      setLists(updatedList)
+    }
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -26,8 +26,11 @@ function EditList({ list, setLists, onUpdateListTitle }) {
         body: JSON.stringify(listFormData)
       })
       .then((r) => r.json())
-      .then((updatedList) => setLists(updatedList))
-      history.push("/")
+      .then((updatedList) => {
+        onUpdateListTitle(updatedList)
+        // console.log(updatedList)
+      })
+      // history.push("/")
     }
   
   return (

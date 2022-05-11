@@ -7,6 +7,7 @@ function LandingPage({ user }) {
   const [details, setDetails] = useState([])
   const [dreams, setDreams] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   function handleCreateForm(showCreateForm) {
     setShowCreateForm(!showCreateForm)
@@ -21,9 +22,13 @@ function LandingPage({ user }) {
 
   //Fetching all Lists
   useEffect(() => {
+    setLoading(true)
     fetch("/lists")
     .then((r) => r.json())
     .then(setLists)
+    .finally(() => {
+      setLoading(false)
+      })
   }, [])
 
   //Fetching all Details
@@ -34,14 +39,15 @@ function LandingPage({ user }) {
   }, [])
 
   function handleUpdateListTitle(updatedList) {
-    console.log("updating list", updatedList)
-    setLists(updatedList)
+    const mapList = lists.map((ml) => ml.id === updatedList.id ? updatedList : ml)
+    setLists(mapList)
   }
   
   const listObj = lists.map((list) => 
   <ListCard 
     key={list.id} 
-    list={list} lists={lists} 
+    list={list}
+    lists={lists} 
     setLists={setLists}
     dreams={dreams}
     setDreams={setDreams}

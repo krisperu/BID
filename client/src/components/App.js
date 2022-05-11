@@ -9,6 +9,8 @@ import NavBar from './NavBar'
 function App() {
   const [user, setUser] = useState(null)
   const [profilePics, setProfilePics] = useState([])
+  // const [lists, setLists] = useState([])
+  // const [loading, setLoading] = useState(false)
   
   //Auto-login
   useEffect(() => {
@@ -25,6 +27,17 @@ function App() {
     .then((r) => r.json())
     .then(setProfilePics)
   }, [])
+
+  //  //Fetching all Lists
+  //  useEffect(() => {
+  //   setLoading(true)
+  //   fetch("/lists")
+  //   .then((r) => r.json())
+  //   .then(setLists)
+  //   .finally(() => {
+  //     setLoading(false)
+  //     })
+  // }, [])
 
   if (!user) return <Login setUser={setUser}/>
 

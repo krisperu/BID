@@ -27,10 +27,7 @@ function EditProfile({ user, setUser }) {
         })
         .then((r) => {
         if (r.ok) {
-            r.json().then((user) => {
-                setUser(user) 
-                console.log(user)
-            });
+            r.json().then((user) => setUser(user));
     
         } else {
             r.json().then((err) => setErrors(err.errors));
@@ -53,18 +50,6 @@ return (
                     />
                 </div>
             </div>
-            {/* <div className="form-row">
-                <div className="form-group col-5">
-                    <label>Image</label>
-                    <input 
-                        name="image" 
-                        type="text"
-                        id={FormData.image}
-                        value={profileFormData.image}
-                        onChange={(e) => handleChange(e)}
-                    />
-                </div>
-            </div> */}
             <div className="form-row">
                 <div className="form-group col-5">
                     <label>Bio</label>
@@ -84,6 +69,9 @@ return (
             </div>
             <button className="ui submit basic button center" type="submit">Submit</button>
         </form>
+        <hr></hr>
+        {/* <br></br> */}
+        <h3>Upload Profile Picture</h3>
         <ImageForm user={user}/>
     </div>
 )

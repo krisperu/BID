@@ -89,6 +89,8 @@ function Dream({ dream, details, setDetails, done, dreams, setDreams, lists, set
               dream={dream} 
               dreams={dreams}
               setDreams={setDreams}
+              lists={lists}
+              setLists={setLists}
             />
           </div>}
       {showDetail &&
