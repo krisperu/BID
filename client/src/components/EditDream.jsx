@@ -83,11 +83,11 @@ return (
             />
         </div>
     </div> */}
-    <div>
+    {/* <div>
         {errors.map((error) => (
         <ul className="errors">・ {error}</ul>
         ))}
-    </div>
+    </div> */}
     <button className="ui submit green basic button center" type="submit">Submit</button>
     <div><button className="ui submit red basic small button center" id="del-btn" onClick={(e) => handleDelete(dream.id)}>Delete Dream</button></div>
     </form>

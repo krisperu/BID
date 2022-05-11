@@ -41,7 +41,7 @@ function handleSubmit(e) {
         body: JSON.stringify(memoryFormData)
     })
     .then((r) => r.json()).then((newMem) => onEditMem(newMem))
-    history.push("/memories")
+    // history.push("/memories")
 }
 
 // console.log(dream)

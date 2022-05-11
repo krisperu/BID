@@ -29,13 +29,17 @@ function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
     const handleDelete = (id) => {
         fetch(`/memories/${id}`, {
             method: "DELETE",
-        }).then((r) => {
+        })
+        .then((r) => {
             if (r.ok) {
-                setCompletedDreams(dream.memories.filter((memObj) => memObj.id !== id))
+                setCompletedDreams(dream.memories.filter((mem) => mem.id !== id))
+                // setCompletedDreams(dreams)
             }
         })
-        history.push("/memories")
+        // history.push("/memories")
     }
+
+    // console.log(memories)
  
 return (
 <div className="memory_obj">

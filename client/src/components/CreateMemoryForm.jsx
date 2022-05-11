@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
+function CreateMemoryForm({ user, dreams, setCompletedDreams, handleScroll }) {
   const [errors, setErrors] = useState([])
   const [memoryFormData, setMemoryFormData] = useState({
     title: '',
@@ -65,7 +65,9 @@ function CreateMemoryForm({ user, dreams, setCompletedDreams }) {
       }
     })
     .then(setMemoryFormData(initialFormState));
+    handleScroll()
   }
+
 
   function handleChange(e) {
     setMemoryFormData({

@@ -21,13 +21,12 @@ function AddDreamForm({ list, dreams, setDreams, lists, setLists }) {
     function onCreateDream(newDreamItem) {
       const updList = lists.map(nl => {
         if (nl.id === newDreamItem.list.id) {
-          // return {...nl, dreams: [...nl.dreams, newDreamItem]}
-          return  console.log("newDreamItem:", newDreamItem)
+          return {...nl, dreams: [...nl.dreams, newDreamItem]}
         } else {
           return nl
         }
       })
-      // setLists(updList)
+      setLists(updList)
     }
 
     function handleSubmit(e){

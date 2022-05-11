@@ -22,6 +22,14 @@ function DreamMemMap({ user }) {
     return <p>Data is loading...</p>;
     }
 
+    function handleScroll() {
+        window.scroll({
+          top: document.body.offsetHeight,
+          left: 0,
+          behavior: 'smooth',
+        });
+      }
+
 const dreamObj = completedDreams?.map(filteredDream =>
 <Memories 
     key={filteredDream.id}
@@ -41,7 +49,7 @@ return (
     <br></br>
     <button onClick={() => handleCreateMemoryForm(showCreateMemoryForm)} className="ui icon left labeled basic button" ><i aria-hidden="true" className="add icon" ></i>Add Memory</button>
     <h3>Achieved Dreams: {completedDreams.length}</h3>
-    {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} setCompletedDreams={setCompletedDreams}/>}
+    {showCreateMemoryForm&& <CreateMemoryForm user={user} dreams={completedDreams} setCompletedDreams={setCompletedDreams} handleScroll={handleScroll}/>}
     {dreamObj}
     <div className='footer'>
           <div>BID | //Flatiron School</div>   
