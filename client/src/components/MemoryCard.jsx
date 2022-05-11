@@ -26,6 +26,20 @@ function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
         setShowEditForm(!showEditForm)
     }
 
+    function onDelete(mem) {
+        // const delMem = dreams.map((cd) => {
+            // if (cd.id === mem.dream.id) {
+                // return { ...cd, memories: cd.memories?.map((m) => m.id === mem.id ? mem.filter((delMem) => delMem.id !== mem) : mem)}
+                console.log(mem)
+            // } 
+            // else {
+            //     // return cd
+            // }
+        // })
+
+        // setCompletedDreams(delMem)
+    }
+
     const handleDelete = (id) => {
         fetch(`/memories/${id}`, {
             method: "DELETE",
@@ -36,10 +50,10 @@ function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
                 // setCompletedDreams(dreams)
             }
         })
-        // history.push("/memories")
+        history.push("/")
     }
 
-    // console.log(memories)
+    // console.log(dreams)
  
 return (
 <div className="memory_obj">
