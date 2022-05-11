@@ -7,7 +7,7 @@ function AddDetailForm({ dream, details, setDetails, lists, setLists, list }) {
     image: '', 
     dream_id: dream.id
   })
-  console.log(dream)
+  // console.log(dream)
 
   const initialFormState = ({
     details: '',
@@ -15,22 +15,23 @@ function AddDetailForm({ dream, details, setDetails, lists, setLists, list }) {
     dream_id: dream.id
   })
 
-  function onCreateDetail(newDetail) {
-    setDetails([...details, newDetail])
+  // console.log(lists[2].dreams[0].details)
+  // const mapOne = lists.map((list) => list.dreams.map((dream) => dream.details [add new detail here]))
+
+  function onCreateDetail(newDet) {
+    const updDetail = lists.map((listItem) => {
+      if (listItem.id === newDet.id) {
+        return {...listItem, dreams: listItem.dreams.map((dreamItem) => dreamItem.id === newDet.dream.id ? {...dreamItem, details: [...dreamItem, newDet]} : dreamItem )}
+      } else {
+        return listItem
+      }
+    })
+    setLists(updDetail)
   }
 
-  // function test(newDetailItem) {
-  //   const updDream = dream.map(nd => {
-  //     if (nd.id === newDetailItem.detail.id) {
-  //       return {...nd, details: [...nd.details, newDetailItem]}
-  //     } else {
-  //       return nd
-  //     }
-  //   })
-  //   setDreams(updDream)
-  // }
+  function handleSubmit(e) {
+    // e.preventDefault()
 
-  function handleSubmit() {
     setErrors([])
 
     const newDetail ={
@@ -48,7 +49,7 @@ function AddDetailForm({ dream, details, setDetails, lists, setLists, list }) {
     })
     .then((r) => {
       if (r.ok) {
-        r.json().then((detail) => onCreateDetail(detail));
+        r.json().then((newDet) => onCreateDetail(newDet));
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

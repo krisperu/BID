@@ -18,22 +18,17 @@ function AddDreamForm({ list, dreams, setDreams, lists, setLists }) {
         list_id: list.id
     })
 
-    // function onCreateDream(newDream) {
-    //     setDreams([...dreams, newDream])
-    // }
-
     function onCreateDream(newDreamItem) {
-      const updList = lists.map(nd => {
-        if (nd.id === newDreamItem.list.id) {
-          return {...nd, dreams: [...nd.dreams, newDreamItem]}
+      const updList = lists.map(nl => {
+        if (nl.id === newDreamItem.list.id) {
+          // return {...nl, dreams: [...nl.dreams, newDreamItem]}
+          return  console.log("newDreamItem:", newDreamItem)
         } else {
-          return nd
+          return nl
         }
       })
-      setLists(updList)
+      // setLists(updList)
     }
-
-    // console.log(list)
 
     function handleSubmit(e){
       e.preventDefault()
