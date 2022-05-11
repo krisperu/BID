@@ -4,7 +4,7 @@ class SendListController < ApplicationController
         render json: list
     end
 
-    def create
+    # def create
         
-    end
+    # end
 end

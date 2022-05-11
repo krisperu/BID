@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import EditMemory from './EditMemory'
 import { Button, Icon, Popup } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom'
 
 function emojiRating(rating) {
     switch (rating) {
@@ -17,6 +18,7 @@ function emojiRating(rating) {
     }
 }
 function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
+    let history = useHistory()
     const [showEditForm, setShowEditForm] = useState(false)
     const emojis = emojiRating(rating)
 
@@ -32,6 +34,7 @@ function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
                 setCompletedDreams(dream.memories.filter((memObj) => memObj.id !== id))
             }
         })
+        history.push("/memories")
     }
  
 return (

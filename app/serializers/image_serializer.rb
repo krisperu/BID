@@ -1,4 +1,4 @@
-class ImagesSerializer < ActiveModel::Serializer
+class ImageSerializer < ActiveModel::Serializer
     attributes :id, :image
     has_one :user
 end
