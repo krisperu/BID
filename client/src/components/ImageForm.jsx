@@ -8,8 +8,8 @@ const ImageUploadForm = ({ user, setUser }) => {
     setImages(e.target.files[0]);
   };
 
-  const handleSubmit = () => {
-    // e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const data = new FormData();
     data.append('images', images);
 
