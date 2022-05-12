@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
 import Signup from './Signup'
 
-function Login({ setUser, user }) {
+function Login({ setUser }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState([])
@@ -38,9 +37,9 @@ function Login({ setUser, user }) {
           </div>
           <div className="center five wide column">
             <div className="bg-text">
-              <h1><b>Before I Die</b></h1>
+              <h1 className="main-logo"><b>Before I Die</b></h1>
               <div>A Bucket List App</div>
-              <hr className="solid"></hr>
+              <div class="ui divider"></div>
               <div>Making your dreams come true, one list at a time.</div>
             </div>
               <br></br>
@@ -62,8 +61,8 @@ function Login({ setUser, user }) {
     
       {/* Login SideBar */}
       <div className="login-form-bar">
-        <div className="logo">
-          <h1>B I D</h1>
+        <div className="login-logo">
+          <h1 className="main-logo">B I D</h1>
           A Bucket List App
         </div>
         <div className="form_padding">
@@ -96,7 +95,7 @@ function Login({ setUser, user }) {
         </form>
         <br></br>
         <button onClick={()=> handleSignup(showSignup)} className="ui basic button">Don't have an accout? Sign Up</button>
-        {showSignup &&<Signup user={user} setUser={setUser}/>}
+        {showSignup &&<Signup setUser={setUser}/>}
         </div>
       </div>
     </div>

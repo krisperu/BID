@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditList({ list, lists, setLists, onUpdateListTitle }) {
+function EditList({ list, setLists, onUpdateListTitle }) {
     let history = useHistory();
     const [listFormData, setListFormData] = useState({title: list.title})
   
@@ -10,10 +10,6 @@ function EditList({ list, lists, setLists, onUpdateListTitle }) {
         ...listFormData,
         [e.target.name]: e.target.value,
       });
-    }
-
-    function onEditList(updatedList) {
-      setLists(updatedList)
     }
   
     function handleSubmit(e) {
@@ -28,13 +24,12 @@ function EditList({ list, lists, setLists, onUpdateListTitle }) {
       .then((r) => r.json())
       .then((updatedList) => {
         onUpdateListTitle(updatedList)
-        // console.log(updatedList)
       })
-      // history.push("/")
     }
   
   return (
     <div>
+      <br></br>
       <form className="ui form" onSubmit={handleSubmit}> 
       <div className="form-row">
           <div className="form-group col-5">

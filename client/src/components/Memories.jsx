@@ -22,7 +22,6 @@ function Memories({ dream, dreams, user, setCompletedDreams }) {
       <div>
         {memoryObj}
       </div>
-      <br></br>
     </div>
   )
 }

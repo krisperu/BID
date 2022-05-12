@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AddDreamForm({ list, dreams, setDreams, lists, setLists }) {
+function AddDreamForm({ list, lists, setLists }) {
     const [errors, setErrors] = useState([])
     const [dreamFormData, setDreamFormData] = useState({
         dream: '',

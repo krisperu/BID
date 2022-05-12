@@ -1,22 +1,18 @@
 import React, { useState } from 'react'
 
-function AddDetailForm({ dream, details, setDetails, lists, setLists, list }) {
+function AddDetailForm({ dream, lists, setLists }) {
   const [errors, setErrors] = useState([])
   const [detailFormData, setDetailFormData] = useState({
     details: '', 
     image: '', 
     dream_id: dream.id
   })
-  // console.log(dream)
 
   const initialFormState = ({
     details: '',
     image: '',
     dream_id: dream.id
   })
-
-  // console.log(lists[2].dreams[0].details)
-  // const mapOne = lists.map((list) => list.dreams.map((dream) => dream.details [add new detail here]))
 
   function onCreateDetail(newDet) {
     const updDetail = lists.map((listItem) => {

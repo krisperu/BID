@@ -4,276 +4,153 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #FAF9F6;
+  /* background-color: rgb(245, 230, 225) !important; */
 }
 
 /* Logo */
-h1 {
+.main-logo {
   font-family: 'Architects Daughter';
   font-size: 40px;
 }
 
-  /* Login/Signup Page */
-  .login-form-bar {
-    height: 100%;
-    width: 460px; 
-    position: fixed;
-    z-index: 1; 
-    top: 0; 
-    right: 0;
-    background-color: #F9F6EE;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  hr {
-    background-color:  rgb(176, 176, 176, 0.3);
-    height: 2px;
-  }
-  
-  .form_padding {
-    padding: 20px;
-  }
-  
-  .login-img {
-    background-image: url(./images/pexels-sunsetoned-7283618.jpg);
-    margin-right: 460px; 
-    padding: 0px 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-  }
+.login-logo {
+  border-bottom:  1px solid #7F5F80;
+}
 
-  .bg-text {
+/* Login/Signup Page */
+.login-form-bar {
+  height: 100%;
+  width: 460px; 
   position: fixed;
-  top: 20%;
+  z-index: 1; 
+  top: 0; 
+  right: 0;
+  background-color: #F9F6EE;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.ui.divider {
+  background-color:  rgb(65, 63, 61, 0.5) !important;
+  height: 1px;
+}
+
+.form_padding {
+  padding: 20px;
+}
+
+.login-img {
+  background-image: url(./images/pexels-sunsetoned-7283618.jpg);
+  margin-right: 460px; 
+  padding: 0px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.bg-text {
+position: fixed;
+top: 20%;
+left: 20%;
+right: 50%;
+background-color: rgba(255, 255, 255, 0.3);
+color: black;
+padding: 20px;
+font-size: 14px;
+}
+
+.bg-text-2 {
+  position: fixed;
+  top: 50%;
   left: 20%;
   right: 50%;
   background-color: rgba(255, 255, 255, 0.3);
   color: black;
   padding: 20px;
-  font-size: 14px;
+  font-size: 16px;
   }
 
-  .bg-text-2 {
-    position: fixed;
-    top: 50%;
-    left: 20%;
-    right: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: black;
-    padding: 20px;
-    font-size: 16px;
-    }
-
-  .space {
-    height: 1000px;
-    width: 500px;
-  }
+.space {
+  height: 1000px;
+  width: 500px;
+}
 
   /* Sidebar */
 aside {
-    height: 100%;
-    width: 160px; 
-    position: fixed;
-    z-index: 1; 
-    top: 0; 
-    left: 0;
-    background-color: #F9F6EE;
-    overflow-x: hidden;
-    padding-top: 0px 10px;
+  height: 100%;
+  width: 160px; 
+  position: fixed;
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 0px 10px;
   }
   
 aside button {
-    position: absolute;
-    bottom: 0px;
+  position: absolute;
+  bottom: 0px;
   }
   
   /* The navigation menu links */
   .ui.color.vertical.menu{
-  background-color: #F9F6EE;
+  background-color: #F9F6EE !important;
   color: black;
-}
+  }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
-}
+  }
 
 .nav-prof{
   padding: 7px;
-}
+  }
   
   /* Page Body */
 .main {
-    margin-left: 200px; 
-    padding: 0px 10px;
-    background-color: #FAF9F6;
+  margin-left: 210px;
   }
 
-  .background {
-    justify-content: center;
+.background {
+  justify-content: center;
   }
-
-.logo {
-    border-bottom: 1px solid #99C1B9;
-  }
+  
+  .logo {
+    background-image: url(./images/pexels-sunsetoned-7283618.jpg);
+    background-position: center;
+    background-size: cover;
+    color: black;
+    }
 
 .errors {
-    color: red;
+  color: red;
   }
 
   /* Landing Page */
 .list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   }
 
 .header {
-    background-color: #F1E3D3;
-    height: 37px;
+  padding-top: 6px;
   }
 
-.footer {
-  border-top: 1px solid #99C1B9;
-  color: #707070;
-  text-align: left;
-  padding-bottom: 2px;
-  padding-left: 3px;
-  display: flex;
-  justify-content: space-between;
-  bottom: 0px;
-}
-
-#landing-footer {
-    border-top: 1px solid #99C1B9;
-    color: #707070;
-    background-color: #FAF9F6;
-    text-align: left;
-    padding-bottom: 2px;
-    padding-left: 3px;
-    display: flex;
-    justify-content: space-between;
-    bottom: 0px;
-    right: 5px;
-    left: 210px;
-    position: fixed;
-  }
-
-  /* Checkbox false */
-.false {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.false input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.false:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a pink background */
-.false input:checked ~ .checkmark {
+#card-top {
   background-color: #F1E3D3;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+#list-dreams {
+  background-color: #FAF9F6;
 }
 
-/* Show the checkmark when checked */
-.false input:checked ~ .checkmark:after {
-  display: block;
+#add-dreams {
+  background-color: #FAF9F6;
 }
-
-/* Style the checkmark/indicator */
-.false .checkmark:after {
-  left: 7px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-  /* Checkbox true */
-  .true {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #f2d0a9;
-    text-decoration: line-through;
-  }
-  
-  .true input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* When the checkbox is checked, add a pink background */
-  .true input:checked ~ .checkmark {
-    background-color: #F1E3D3;
-  }
-  
-  /* Show the checkmark when checked */
-  .true input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .true .checkmark:after {
-    left: 7px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
 
 .dreamTitle {
   width: 200px;
@@ -284,37 +161,184 @@ aside button {
   justify-content: center;
 }
 
-/* Memory Page */
-.memory_obj {
-  padding: 20px;
-  background-color: #F1E3D3;
+.footer {
+  border-top: 1px solid #7F5F80;
+  color: #707070;
+  text-align: left;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0px;
 }
 
-.vertical-img {
-  max-width: 300px;
-  max-height: 500px;
-}
+#landing-footer {
+  border-top: 1px solid #99C1B9;
+  color: #707070;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0px;
+  right: 5px;
+  left: 210px;
+  position: fixed;
+  }
+  
+  /* Memory Page */
+  .dream-mem-title {
+    background-color: #dbc0c4;
+  }
 
-.horizontal-img {
-  max-width: 350px;
-  max-height: 200px;
-}
-
-.mem-desc {
-  background-color: #ffffff;
-}
-
-.emojis {
-  color: #D88C9A;
-}
-
-.mem-title {
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: 0 0 10px #dededf;
-}
-
-.profile-pic {
-  max-height: 440px;
-  max-width: 290xpx;
-}
+  .memory_obj {
+    padding: 20px;
+    background-color: rgb(245, 230, 225);
+  }
+  
+  .vertical-img {
+    max-width: 300px;
+    max-height: 500px;
+  }
+  
+  .horizontal-img {
+    max-width: 350px;
+    max-height: 200px;
+  }
+  
+  .mem-desc {
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid rgb(216, 216, 217);
+  }
+  
+  .emojis {
+    color: #D88C9A;
+  }
+  
+  .mem-title {
+    background-color: white;
+    /* border-radius: 3px; */
+    border-top: 1px solid rgb(216, 216, 217);
+    border-bottom: 1px solid rgb(216, 216, 217);
+  }
+  
+  /* Profile */
+  .profile-pic {
+    max-height: 440px;
+    max-width: 290xpx;
+  }
+  
+    /* Checklist */
+            /* Checkbox false */
+          .false {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+  
+          .false input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            }
+  
+          /* Create a custom checkbox */
+          .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            }
+  
+          /* On mouse-over, add a grey background color */
+          .false:hover input ~ .checkmark {
+            background-color: #ccc;
+            }
+  
+          /* When the checkbox is checked, add a pink background */
+          .false input:checked ~ .checkmark {
+            background-color: #F1E3D3;
+            }
+  
+          /* Create the checkmark/indicator (hidden when not checked) */
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            }
+  
+          /* Show the checkmark when checked */
+          .false input:checked ~ .checkmark:after {
+            display: block;
+            }
+  
+          /* Style the checkmark/indicator */
+          .false .checkmark:after {
+            left: 7px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            }
+  
+            /* Checkbox true */
+            .true {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: #ffe0bc;
+            text-decoration: line-through;
+            }
+            
+            .true input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            }
+            
+            /* When the checkbox is checked, add a pink background */
+          .true input:checked ~ .checkmark {
+            background-color: #F1E3D3;
+            }
+            
+            /* Show the checkmark when checked */
+          .true input:checked ~ .checkmark:after {
+            display: block;
+            }
+            
+            /* Style the checkmark/indicator */
+          .true .checkmark:after {
+            left: 7px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            }
