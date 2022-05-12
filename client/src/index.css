@@ -13,6 +13,10 @@ body {
   font-size: 40px;
 }
 
+.login-logo {
+  border-bottom:  1px solid #7F5F80;
+}
+
 /* Login/Signup Page */
 .login-form-bar {
   height: 100%;
@@ -26,9 +30,9 @@ body {
   padding-top: 20px;
 }
 
-hr {
-  background-color:  rgb(65, 63, 61 0.3) !important;
-  height: 2px;
+.ui.divider {
+  background-color:  rgb(65, 63, 61, 0.5) !important;
+  height: 1px;
 }
 
 .form_padding {
@@ -80,7 +84,6 @@ aside {
   z-index: 1; 
   top: 0; 
   left: 0;
-  background-color: #F9F6EE;
   overflow-x: hidden;
   padding-top: 0px 10px;
   }
@@ -206,6 +209,8 @@ aside button {
   
   .mem-desc {
     background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid rgb(216, 216, 217);
   }
   
   .emojis {
@@ -214,8 +219,9 @@ aside button {
   
   .mem-title {
     background-color: white;
-    border-radius: 3px;
-    border: 1px solid rgb(216, 216, 217);
+    /* border-radius: 3px; */
+    border-top: 1px solid rgb(216, 216, 217);
+    border-bottom: 1px solid rgb(216, 216, 217);
   }
   
   /* Profile */

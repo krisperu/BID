@@ -4,7 +4,7 @@ import Dream from './Dream'
 import AddDreamForm from './AddDreamForm'
 import { Button, Icon, Popup } from 'semantic-ui-react'
 
-function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetails, onUpdateListTitle }) {
+function ListCard({ list, lists, setLists, onUpdateListTitle }) {
   const [showEditForm, setShowEditForm] = useState(false)
   const [showAddDreamForm, setShowAddDreamForm] = useState(false)
   
@@ -48,14 +48,9 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
   <Dream
     key={dream.id} 
     dream={dream} 
-    details={details} 
-    setDetails={setDetails} 
     done={dream.status} 
-    dreams={dreams} 
-    setDreams={setDreams}
     lists={lists}
     setLists={setLists}
-    list={list}
     />
   )
 
@@ -106,8 +101,7 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
               </button>} 
           />
         <div className="header">{list.title}</div>
-        {/* <br></br> */}
-          {showEditForm && <EditList list={list} lists={lists} setLists={setLists} onUpdateListTitle={onUpdateListTitle}/>}
+          {showEditForm && <EditList list={list} setLists={setLists} onUpdateListTitle={onUpdateListTitle}/>}
       </div>
         <div className="content" id="list-dreams">{dream}</div>
         <div className="extra content" id="add-dreams">
@@ -119,7 +113,7 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
               Add New Dream
             </button>
           </div>
-            {showAddDreamForm &&<AddDreamForm list={list} dreams={dreams} setDreams={setDreams} lists={lists} setLists={setLists}/>}
+            {showAddDreamForm &&<AddDreamForm list={list} lists={lists} setLists={setLists}/>}
         </div>
       </div>
       <br></br>

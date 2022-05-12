@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function EditDream({ dream, dreams, setDreams, lists, setLists }) {
+function EditDream({ dream, lists, setLists }) {
     let hisotry = useHistory()
     const [errors, setErrors] = useState([])
     const [dreamFormData, setDreamFormData] = useState({
@@ -45,15 +45,15 @@ function handleSubmit(e){
     hisotry.push("/")
 }
 
-const handleDelete = (id) => {
-    fetch(`dreams/${id}`, {
-        method: "DELETE",
-    }).then((r) => {
-        if (r.ok) {
-            setDreams(dreams.filter((dreamObj) => dreamObj.id !== id))
-        }
-    })
-}
+// const handleDelete = (id) => {
+//     fetch(`dreams/${id}`, {
+//         method: "DELETE",
+//     }).then((r) => {
+//         if (r.ok) {
+//             setDreams(dreams.filter((dreamObj) => dreamObj.id !== id))
+//         }
+//     })
+// }
 
 return (
 <div className="center">
@@ -83,13 +83,8 @@ return (
             />
         </div>
     </div> */}
-    {/* <div>
-        {errors.map((error) => (
-        <ul className="errors">・ {error}</ul>
-        ))}
-    </div> */}
     <button className="ui submit green basic button center" type="submit">Submit</button>
-    {/* <div><button className="ui submit red basic small button center" id="del-btn" onClick={(e) => handleDelete(dream.id)}>Delete Dream</button></div> */}
+    {/* <div><button className="ui red basic small button center" id="del-btn" onClick={(e) => handleDelete(dream.id)}>Delete Dream</button></div> */}
     </form>
 </div>
 )

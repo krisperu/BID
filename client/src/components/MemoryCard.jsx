@@ -109,10 +109,9 @@ return (
             <p>{memory.desc}</p>
             <br></br>
         </div>
-        {showEditForm &&<EditMemory memory={memory} dream={dream} dreams={dreams} setCompletedDreams={setCompletedDreams}/>}
+        {showEditForm &&<EditMemory memory={memory} dreams={dreams} setCompletedDreams={setCompletedDreams}/>}
     </div> 
-    <hr className="solid"></hr>
-    <br></br> 
+    <div class="ui divider"></div>
 </div>
 )
 }

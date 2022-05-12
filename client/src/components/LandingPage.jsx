@@ -4,21 +4,12 @@ import ListCard from './ListCard'
 
 function LandingPage({ user }) {
   const [lists, setLists] = useState([])
-  const [details, setDetails] = useState([])
-  const [dreams, setDreams] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
   const [loading, setLoading] = useState(false)
 
   function handleCreateForm(showCreateForm) {
     setShowCreateForm(!showCreateForm)
   }
-
-   //Fetching all Dreams
-  useEffect(() => {
-    fetch("/dreams")
-    .then((r) => r.json())
-    .then(setDreams)
-  }, [])
 
   //Fetching all Lists
   useEffect(() => {
@@ -29,13 +20,6 @@ function LandingPage({ user }) {
     .finally(() => {
       setLoading(false)
       })
-  }, [])
-
-  //Fetching all Details
-  useEffect(() => {
-    fetch("/details")
-    .then((r) => r.json())
-    .then(setDetails)
   }, [])
 
   function handleUpdateListTitle(updatedList) {
@@ -49,10 +33,6 @@ function LandingPage({ user }) {
     list={list}
     lists={lists} 
     setLists={setLists}
-    dreams={dreams}
-    setDreams={setDreams}
-    details={details}
-    setDetails={setDetails}
     onUpdateListTitle={handleUpdateListTitle}
   />
   )

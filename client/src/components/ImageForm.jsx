@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ImageUploadForm = ({ user, setUser }) => {
+const ImageUploadForm = ({ setUser }) => {
   const [images, setImages] = useState({});
   
   const handleChange = e => {
@@ -18,7 +18,7 @@ const ImageUploadForm = ({ user, setUser }) => {
       body: data,
     })
     .then((r) => r.json())
-    .then((user) => setUser(user))
+    // .then((user) => setUser(user))
   };
   
   return (

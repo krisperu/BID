@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom"
 
-function EditMemory({ memory, user, dreams, setCompletedDreams, dream, memories, setMemories }) {
-    let history = useHistory()
+function EditMemory({ memory, dreams, setCompletedDreams }) {
     const [errors, setErrors] = useState([])
     const [memoryFormData, setMemoryFormData] = useState({
         title: memory.title,
@@ -41,7 +39,6 @@ function handleSubmit(e) {
         body: JSON.stringify(memoryFormData)
     })
     .then((r) => r.json()).then((newMem) => onEditMem(newMem))
-    // history.push("/memories")
 }
 
 // console.log(dream)

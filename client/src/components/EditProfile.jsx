@@ -72,7 +72,7 @@ return (
         <hr></hr>
         {/* <br></br> */}
         <h3>Upload Profile Picture</h3>
-        <ImageForm user={user} setUser={setUser}/>
+        <ImageForm setUser={setUser}/>
     </div>
 )
 }

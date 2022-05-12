@@ -14,7 +14,7 @@ function exampleReducer(state, action) {
   }
 }
 
-function Profile({ user, setUser,profilePics }) {
+function Profile({ user, setUser, profilePics }) {
   let hisotry = useHistory()
   const [showEditForm, setShowEditForm] = useState(false)
   const [state, dispatch] = React.useReducer(exampleReducer, {
@@ -54,9 +54,6 @@ function Profile({ user, setUser,profilePics }) {
           <div className="meta">Email: {user.email}</div>
           <div className="description">Bio: {user.bio}</div>
         </div>
-        {/* <div className="extra content">
-            <div className="description"><b>Lists: </b>{user.lists.length}</div>
-        </div> */}
         <div className="extra content">
           <button className="ui submit grey basic button center" onClick={() => handleEditForm(showEditForm)}>Edit Profile</button>
         </div>
