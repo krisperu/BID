@@ -18,7 +18,7 @@ const ImageUploadForm = ({ setUser }) => {
       body: data,
     })
     .then((r) => r.json())
-    // .then((user) => setUser(user))
+    alert('Image uploaded. Please refresh page. 🔄');
   };
   
   return (
