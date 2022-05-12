@@ -38,7 +38,7 @@ function Login({ setUser, user }) {
           </div>
           <div className="center five wide column">
             <div className="bg-text">
-              <h1><b>Before I Die</b></h1>
+              <h1 className="main-logo"><b>Before I Die</b></h1>
               <div>A Bucket List App</div>
               <hr className="solid"></hr>
               <div>Making your dreams come true, one list at a time.</div>
@@ -63,7 +63,7 @@ function Login({ setUser, user }) {
       {/* Login SideBar */}
       <div className="login-form-bar">
         <div className="logo">
-          <h1>B I D</h1>
+          <h1 className="main-logo">B I D</h1>
           A Bucket List App
         </div>
         <div className="form_padding">

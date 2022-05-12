@@ -57,7 +57,6 @@ function MemoryCard({ memory, dream, rating, setCompletedDreams, dreams }) {
  
 return (
 <div className="memory_obj">
-    <h2 className="mem-title">{memory.title}</h2>
     <div className="ui divided two column grid">
         <div className="stretched row">
         <div className="column">
@@ -86,7 +85,7 @@ return (
             icon='close' 
             basic 
             size='mini'
-          />}>
+            />}>
             <Icon name='hand paper outline' color='red' size='big'/>
             <p>
               Are you sure you want to delete this memory?
@@ -94,22 +93,20 @@ return (
             <Button basic color='red' size='mini' onClick={() => handleDelete(memory.id)}>
               Delete
             </Button>
-          </Popup>
-        {/* <button 
-            className="ui mini right floated circular basic icon button"
-            onClick={() => handleDelete(memory.id)}>
-                <i aria-hidden="true" className="close link icon"></i>
-        </button> */}
+        </Popup>
         <button
             className="ui mini right floated circular basic icon button"
             onClick={(e) => handleEditForm(showEditForm)}>
                 <i aria-hidden="true" className="pencil alternate icon"></i>
         </button>
         <br></br>
-        <h3 className="">{dream.dream}</h3>
+        <h2 className="mem-title">{memory.title}</h2>
+        <div><b>Completed Dream:</b></div>
+        <div>{dream.dream}</div>
         <div className="description">
-            <div>Rating: <div className="emojis">{emojis}</div></div>
-            <p>Notes: {memory.desc}</p>
+            <div><b>Rating:</b><div className="emojis">{emojis}</div></div>
+            <b>Notes:</b>
+            <p>{memory.desc}</p>
             <br></br>
         </div>
         {showEditForm &&<EditMemory memory={memory} dream={dream} dreams={dreams} setCompletedDreams={setCompletedDreams}/>}

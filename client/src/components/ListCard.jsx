@@ -62,7 +62,7 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
   return (
     <div key={list.id} className="card">
       <div className="ui centered card">
-        <div className="content">
+        <div className="content" id="card-top">
           <Popup
             on='click' 
             pinned 
@@ -106,11 +106,11 @@ function ListCard({ list, lists, setLists, dreams, setDreams, details, setDetail
               </button>} 
           />
         <div className="header">{list.title}</div>
-        <br></br>
+        {/* <br></br> */}
           {showEditForm && <EditList list={list} lists={lists} setLists={setLists} onUpdateListTitle={onUpdateListTitle}/>}
-        <div className="content">{dream}</div>
       </div>
-        <div className="extra content">
+        <div className="content" id="list-dreams">{dream}</div>
+        <div className="extra content" id="add-dreams">
           <div className="ui buttons">
             <button 
               onClick={(e) => handleAddDreamForm(e, showAddDreamForm)} 
