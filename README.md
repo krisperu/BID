@@ -66,6 +66,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Author
 
-Created by: Kristina Peru
-[GitHub](https://github.com/krisperu)
-[LinkedIn](https://www.linkedin.com/in/kristina-peru-205557189/)
+Kristina Peru | [GitHub](https://github.com/krisperu) | [LinkedIn](https://www.linkedin.com/in/kristina-peru-205557189/)
