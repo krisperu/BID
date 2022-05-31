@@ -8,6 +8,13 @@ body {
 }
 
 /* Logo */
+.logo {
+  background-image: url(./images/pexels-sunsetoned-7283618.jpg);
+  background-position: center;
+  background-size: cover;
+  color: black;
+  }
+
 .main-logo {
   font-family: 'Architects Daughter';
   font-size: 40px;
@@ -189,14 +196,7 @@ aside button {
 
 .background {
   justify-content: center;
-  }
-  
-  .logo {
-    background-image: url(./images/pexels-sunsetoned-7283618.jpg);
-    background-position: center;
-    background-size: cover;
-    color: black;
-    }
+  } 
 
 .errors {
   color: red;
@@ -209,6 +209,13 @@ aside button {
   justify-content: space-evenly;
   flex-wrap: wrap;
   }
+
+@media screen and (max-width: 670px) {
+  .ui.centered.card {
+    font-size:12px;
+    width: 100%;
+  }
+}
 
 .header {
   padding-top: 6px;
@@ -230,6 +237,12 @@ aside button {
   width: 200px;
 }
 
+@media screen and (max-width: 670px) {
+  .dreamTitle {
+    width: 65%;
+  }
+}
+
 .form-row{
   display: flex;
   justify-content: center;
@@ -245,16 +258,16 @@ aside button {
   display: flex;
   justify-content: space-between;
   bottom: 0px;
-  right: 5px;
-  /* left: 210px; */
+  right: 0px;
+  width: 82%;
   position: fixed;
 }
 
 @media screen and (max-width: 670px) {
   .footer {
     font-size: 8px;
-    flex-direction: column;
-    width: 79%;
+    /* flex-direction: column; */
+    width: 80%;
   }
 }
   
@@ -299,6 +312,11 @@ aside button {
   .profile-pic {
     max-height: 440px;
     max-width: 290xpx;
+  }
+
+  .profile {
+    padding: 10px;
+    padding-bottom: 27px;
   }
   
     /* Checklist */

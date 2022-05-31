@@ -43,7 +43,7 @@ function Profile({ user, setUser, profilePics }) {
       <br></br>
       <h2>My Profile:</h2>
       <br></br>
-      <div className="center">
+      <div className="profile">
         <div className="ui centered card">
         <div className="image">
           <img src={profilePics ? profilePics.image : user.image} alt={user.id}/>
