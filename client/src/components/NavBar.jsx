@@ -1,7 +1,9 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 function NavBar({ setUser, user, profilePics }) {
+  let hisotry = useHistory()
 
   const logout = () => {
     fetch('/logout',{
@@ -12,9 +14,13 @@ function NavBar({ setUser, user, profilePics }) {
     })
   }
 
+  function goHome() {
+    hisotry.push("/profile")
+  }
+
   return (
     <aside className="ui color vertical menu">
-      <div className="nav-prof">
+      <div className="nav-prof" onClick={goHome}>
         <img src={profilePics ? profilePics.image : user.image} alt={user.id} className="ui avatar image"/>
         <span>{user.name}</span>
       </div>
