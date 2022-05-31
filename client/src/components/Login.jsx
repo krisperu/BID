@@ -94,7 +94,7 @@ function Login({ setUser }) {
           <button className="ui basic submit button center" type="submit">Login</button>
         </form>
         <br></br>
-        <button onClick={()=> handleSignup(showSignup)} className="ui basic button">Don't have an accout? Sign Up</button>
+        <button onClick={()=> handleSignup(showSignup)} className="ui basic button">Don't have an account? Sign Up</button>
         {showSignup &&<Signup setUser={setUser}/>}
         </div>
       </div>

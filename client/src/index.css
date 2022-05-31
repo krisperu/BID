@@ -13,6 +13,12 @@ body {
   font-size: 40px;
 }
 
+@media screen and (max-width: 670px) {
+  .main-logo {
+    font-size: 20px;
+  }
+}
+
 .login-logo {
   border-bottom:  1px solid #7F5F80;
 }
@@ -30,6 +36,13 @@ body {
   padding-top: 20px;
 }
 
+@media screen and (max-width: 670px) {
+  .login-form-bar {
+    width: 180px;
+    height: 100%;
+  }
+}
+
 .ui.divider {
   background-color:  rgb(65, 63, 61, 0.5) !important;
   height: 1px;
@@ -37,6 +50,12 @@ body {
 
 .form_padding {
   padding: 20px;
+}
+
+@media screen and (max-width: 670px) {
+  .form_padding {
+    padding: 10px;
+  }
 }
 
 .login-img {
@@ -47,6 +66,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+}
+@media screen and (max-width: 670px) {
+  .login-img {
+    width: 80%;
+    height: 100%;
+  }
 }
 
 .bg-text {
@@ -60,6 +85,16 @@ padding: 20px;
 font-size: 14px;
 }
 
+@media screen and (max-width: 670px) {
+  .bg-text {
+    top: 10%;
+    left: 10%;
+    width: 140px;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
 .bg-text-2 {
   position: fixed;
   top: 50%;
@@ -71,9 +106,26 @@ font-size: 14px;
   font-size: 16px;
   }
 
+  @media screen and (max-width: 670px) {
+    .bg-text-2 {
+      top: 40%;
+      left: 10%;
+      width: 140px;
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+
 .space {
   height: 1000px;
   width: 500px;
+}
+
+@media screen and (max-width: 670px) {
+  .space {
+    width: 100%;
+    /* height: 100%; */
+  }
 }
 
   /* Sidebar */
