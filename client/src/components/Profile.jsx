@@ -86,7 +86,7 @@ function Profile({ user, setUser, profilePics }) {
       <br></br>
       <div className='footer'>
           <div>BID | //Flatiron School</div>   
-          <div>Created By: Kristina Peru | <a href="https://github.com/krisperu/BID">GitHub</a> | <a href="https://www.linkedin.com/in/kristina-peru-205557189/">Contact Me</a></div>
+          <div>Created By: Kristina Peru | <a href="https://github.com/krisperu/BID">GitHub</a> | <a href="https://www.linkedin.com/in/kristina-peru/">Contact Me</a></div>
         </div>
     </div>
   )

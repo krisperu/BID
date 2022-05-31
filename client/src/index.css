@@ -131,7 +131,7 @@ font-size: 14px;
   /* Sidebar */
 aside {
   height: 100%;
-  width: 160px; 
+  width: 18%; 
   position: fixed;
   z-index: 1; 
   top: 0; 
@@ -139,6 +139,12 @@ aside {
   overflow-x: hidden;
   padding-top: 0px 10px;
   }
+
+@media screen and (max-width: 670px) {
+  .aside {
+    width: 18%;
+  }
+}
   
 aside button {
   position: absolute;
@@ -149,6 +155,16 @@ aside button {
   .ui.color.vertical.menu{
   background-color: #F9F6EE !important;
   color: black;
+  width: 18%;
+  }
+
+  @media screen and (max-width: 670px) {
+    .ui.color.vertical.menu{
+      background-color: #F9F6EE !important;
+      color: black;
+      width: 20%;
+      font-size: 12px;
+      }
   }
 
 /* When you mouse over the navigation links, change their color */
@@ -162,7 +178,13 @@ aside button {
   
   /* Page Body */
 .main {
-  margin-left: 210px;
+  margin-left: 18%;
+  }
+
+  @media screen and (max-width: 670px) {
+    .main {
+      margin-left: 20%;
+    }
   }
 
 .background {
@@ -216,17 +238,6 @@ aside button {
 .footer {
   border-top: 1px solid #7F5F80;
   color: #707070;
-  text-align: left;
-  padding-bottom: 2px;
-  padding-left: 3px;
-  display: flex;
-  justify-content: space-between;
-  bottom: 0px;
-}
-
-#landing-footer {
-  border-top: 1px solid #99C1B9;
-  color: #707070;
   background-color: rgb(255, 255, 255);
   text-align: left;
   padding-bottom: 2px;
@@ -235,9 +246,17 @@ aside button {
   justify-content: space-between;
   bottom: 0px;
   right: 5px;
-  left: 210px;
+  /* left: 210px; */
   position: fixed;
+}
+
+@media screen and (max-width: 670px) {
+  .footer {
+    font-size: 8px;
+    flex-direction: column;
+    width: 79%;
   }
+}
   
   /* Memory Page */
   .dream-mem-title {
