@@ -1,6 +1,6 @@
 # Before I Die
 
-[BeforeIDieApp](https://beforeidieapp.herokuapp.com/)
+[Before I Die App](https://beforeidieapp.herokuapp.com/)
 
 A Bucket List App. Making your dreams come true, one list at a time.
 
